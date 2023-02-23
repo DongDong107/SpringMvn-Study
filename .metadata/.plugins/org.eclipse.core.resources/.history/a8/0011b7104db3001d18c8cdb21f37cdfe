@@ -1,0 +1,5 @@
+package kr.co.rland.web.controller.admin;
+
+public class MenuController {
+
+}

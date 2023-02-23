@@ -1,0 +1,12 @@
+package kr.co.rland.web.controller.admin;
+
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+@RestController("adminMenuController")
+public class MenuController {
+	@RequestMapping("/admin/menu/list")
+	public String list() {
+		return "admin/list";
+	}
+}

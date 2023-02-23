@@ -1,0 +1,8 @@
+package kr.co.rland.web.controller;
+
+public class indexController {
+	
+	public String asdfsaf() {
+		return "hello boot";
+	}
+}
