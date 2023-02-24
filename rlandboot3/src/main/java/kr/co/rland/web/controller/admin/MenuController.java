@@ -1,18 +1,47 @@
 package kr.co.rland.web.controller.admin;
 
 
+import java.io.UnsupportedEncodingException;
+import java.net.URLDecoder;
+
+import org.springframework.http.HttpHeaders;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.CookieValue;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestHeader;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.RequestParam;
 
+// 이름 설정을 admin 안붙여서 안해놓으면 일반위의 MenuController랑 이름이 겹치게 돼서 오류남.
 @Controller("adminMenuController")
 @RequestMapping("/admin/menu")
 
 public class MenuController {
 	@GetMapping("list")
-	public String list() {
+	public String list(
+			@RequestParam(name="p", defaultValue = "1") int page,
+			@RequestParam(name="q", required = false) String query,
+			@CookieValue("my") String myCookie, 
+			@RequestHeader(HttpHeaders.ACCEPT_LANGUAGE) String language 
+//			HttpServletRequest request
+			) throws UnsupportedEncodingException {
+		
+//		String myCookie ="";
+//		Cookie[] cookies = request.getCookies();
+//		for(Cookie cookie : cookies) {
+//			if(cookie.getName().equals("my")) {
+//				myCookie = cookie.getValue();
+//				break;
+//			}
+//		}
+		
+		System.out.printf("Accept-Language : %s\n",language);
+		myCookie = URLDecoder.decode(myCookie, "utf-8");
+		System.out.println(myCookie);
+		
+		System.out.println(page);
+		System.out.println(query);
 		return "/WEB-INF/view/admin/menu/list.jsp";
 	}
 	
