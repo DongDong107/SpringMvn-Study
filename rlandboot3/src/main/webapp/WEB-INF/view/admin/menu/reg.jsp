@@ -25,7 +25,11 @@
 				<legend>메뉴 입력 필드</legend>
 				<div>
 					<label>이미지 : </label> 
-					<input type="file" name="img">
+					<input type="file" name="imgs">
+				</div>
+				<div>
+					<label>이미지 : </label> 
+					<input type="file" name="imgs">
 				</div>
 				<div>
 					<input type="submit" value="등록">
