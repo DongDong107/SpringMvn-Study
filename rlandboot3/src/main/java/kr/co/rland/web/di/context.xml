@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="
+        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!-- bean definitions here -->
+	<bean name="repository" class="kr.co.rland.web.repository.mybatis.MbMenuRepository"></bean>
+	<bean class="kr.co.rland.web.service.DefaultMenuService">
+		<property name="repository" ref="repository" />
+	</bean>
+</beans>

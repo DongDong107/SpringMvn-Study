@@ -4,6 +4,7 @@ package kr.co.rland.web.controller.admin;
 import java.io.UnsupportedEncodingException;
 import java.net.URLDecoder;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpHeaders;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.CookieValue;
@@ -13,11 +14,33 @@ import org.springframework.web.bind.annotation.RequestHeader;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import kr.co.rland.web.repository.MenuRepository;
+
 // 이름 설정을 admin 안붙여서 안해놓으면 일반위의 MenuController랑 이름이 겹치게 돼서 오류남.
 @Controller("adminMenuController")
 @RequestMapping("/admin/menu")
-
 public class MenuController {
+	private MenuRepository menuRepository;
+	
+	public MenuController() {
+		
+	}
+		
+	public MenuRepository getMenuRepository() {
+		return menuRepository;
+	}
+	
+	@Autowired
+	public void setMenuRepository(MenuRepository menuRepository) {
+		this.menuRepository = menuRepository;
+	}
+	
+	public MenuController(MenuRepository menuRepository) {
+		super();
+		this.menuRepository = menuRepository;
+	}
+
+
 	@GetMapping("list")
 	public String list(
 			@RequestParam(name="p", defaultValue = "1") int page,

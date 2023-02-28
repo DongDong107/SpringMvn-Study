@@ -15,6 +15,7 @@ class JdbcMenuReposioryTest {
 		List<Menu> list = repository.findAll();
 		
 		System.out.println(list.size());
+		System.out.println();
 	}
 
 }
