@@ -6,6 +6,7 @@ public class Menu {
 	private long id;
 	private String name;
 	private int price;
+	@Column("reg_date")
 	private Date regDate;
 	private int categoryId;
 	private long regMemberId;

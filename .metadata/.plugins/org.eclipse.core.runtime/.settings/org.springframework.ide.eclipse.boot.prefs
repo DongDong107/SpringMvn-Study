@@ -2,6 +2,7 @@ eclipse.preferences.version=1
 org.springframework.ide.eclipse.boot.wizard.PopularityTracker.data-jdbc=1
 org.springframework.ide.eclipse.boot.wizard.PopularityTracker.jdbc=1
 org.springframework.ide.eclipse.boot.wizard.PopularityTracker.mariadb=1
+org.springframework.ide.eclipse.boot.wizard.PopularityTracker.mybatis=1
 org.springframework.ide.eclipse.boot.wizard.PopularityTracker.web=3
 org.springframework.ide.eclipse.boot.wizard.PreferredSelections.artifactId=web
 org.springframework.ide.eclipse.boot.wizard.PreferredSelections.bootVersion=3.0.3

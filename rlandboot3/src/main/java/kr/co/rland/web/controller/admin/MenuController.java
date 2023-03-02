@@ -15,30 +15,34 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import kr.co.rland.web.repository.MenuRepository;
+import kr.co.rland.web.repository.jdbc.JdbcMenuReposiory;
+import kr.co.rland.web.service.MenuService;
 
 // 이름 설정을 admin 안붙여서 안해놓으면 일반위의 MenuController랑 이름이 겹치게 돼서 오류남.
 @Controller("adminMenuController")
 @RequestMapping("/admin/menu")
 public class MenuController {
-	private MenuRepository menuRepository;
-	
-	public MenuController() {
-		
-	}
-		
-	public MenuRepository getMenuRepository() {
-		return menuRepository;
-	}
 	
 	@Autowired
-	public void setMenuRepository(MenuRepository menuRepository) {
-		this.menuRepository = menuRepository;
-	}
+	private MenuService service;
 	
-	public MenuController(MenuRepository menuRepository) {
-		super();
-		this.menuRepository = menuRepository;
-	}
+//	public MenuController() {
+//		
+//	}
+//		
+//	public MenuRepository getMenuRepository() {
+//		return menuRepository;
+//	}
+//	
+//	
+//	public void setMenuRepository(MenuRepository menuRepository) {
+//		this.menuRepository = menuRepository;
+//	}
+//	
+//	public MenuController(MenuRepository menuRepository) {
+//		super();
+//		this.menuRepository = menuRepository;
+//	}
 
 
 	@GetMapping("list")
@@ -65,6 +69,7 @@ public class MenuController {
 		
 		System.out.println(page);
 		System.out.println(query);
+		System.out.println(service.getList());
 		return "/WEB-INF/view/admin/menu/list.jsp";
 	}
 	

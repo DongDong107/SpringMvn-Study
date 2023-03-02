@@ -4,29 +4,33 @@ import java.util.List;
 
 import javax.sql.DataSource;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.jdbc.DataSourceBuilder;
 import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.JdbcTemplate;
-import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Repository;
 
 import kr.co.rland.web.entity.Menu;
 import kr.co.rland.web.repository.MenuRepository;
 
-@Component
+@Repository
 public class JdbcMenuReposiory implements MenuRepository {
-
+	
+	@Autowired
+	private DataSource dataSource;
+	
 	@Override	
 	public List<Menu> findAll() {
 		
 		String sql = String.format("select id, name, price, regDate, categoryId from menu");
 		
-		DataSourceBuilder dataSourceBuilder = DataSourceBuilder.create();
-        dataSourceBuilder.driverClassName("org.mariadb.jdbc.Driver");
-        dataSourceBuilder.url("jdbc:mariadb://db.newlecture.com:3306/rlanddb");
-        dataSourceBuilder.username("rland");
-        dataSourceBuilder.password("20220823");
-		
-        DataSource dataSource = dataSourceBuilder.build();
+//		DataSourceBuilder dataSourceBuilder = DataSourceBuilder.create();
+//        dataSourceBuilder.driverClassName("org.mariadb.jdbc.Driver");
+//        dataSourceBuilder.url("jdbc:mariadb://db.newlecture.com:3306/rlanddb");
+//        dataSourceBuilder.username("rland");
+//        dataSourceBuilder.password("20220823");
+//		
+//        DataSource dataSource = dataSourceBuilder.build();
 		
 		
 		JdbcTemplate template = new JdbcTemplate(dataSource);
