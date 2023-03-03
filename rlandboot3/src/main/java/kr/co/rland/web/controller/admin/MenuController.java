@@ -69,6 +69,9 @@ public class MenuController {
 		
 		System.out.println(page);
 		System.out.println(query);
+		for(int i=0; i<service.getList().size() ; i++) {
+			System.out.println(service.getList().get(i));	
+		}
 		System.out.println(service.getList());
 		return "/WEB-INF/view/admin/menu/list.jsp";
 	}
