@@ -13,7 +13,7 @@ import org.springframework.stereotype.Repository;
 import kr.co.rland.web.entity.Menu;
 import kr.co.rland.web.repository.MenuRepository;
 
-@Repository
+//@Repository
 public class JdbcMenuReposiory implements MenuRepository {
 	
 	@Autowired
@@ -40,6 +40,30 @@ public class JdbcMenuReposiory implements MenuRepository {
 		
 		
 		return list;	
+	}
+
+	@Override
+	public Menu findById(long id) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Menu insert(Menu menu) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Menu update(Menu menu) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public void delete(long id) {
+		// TODO Auto-generated method stub
+		
 	}
 }
 
