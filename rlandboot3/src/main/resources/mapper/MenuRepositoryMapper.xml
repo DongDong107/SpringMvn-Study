@@ -11,10 +11,10 @@
 			<if test="query != null">
 				name like '%${query}%'
 			</if>
-			<if test="query != null">
+			<if test="price != null">
 				and price > #{price}
 			</if>
-			<if test="query != null">
+			<if test="categoryId != null">
 				and categoryId = #{categoryId}
 			</if> 
 		</trim>    
@@ -28,7 +28,21 @@
 		where id=#{id}
 	</select>
 	<insert id="insert"></insert>
-	<update id="update"></update>
+	<update id="update" parameterType="kr.co.rland.web.entity.Menu">
+		update menu
+		 <trim prefix="SET" suffixOverrides=",">
+		 	<if test="price != null">
+		 		price=#{price},
+		 	</if>
+		 	<if test="name != null">
+		    	name = #{name},
+		    </if>
+		    <if test="img != null">
+		    	img = #{img}
+		    </if>
+		 </trim>		
+		where id = #{id}
+	</update>
 	<delete id="delete"></delete>
 </mapper>
 

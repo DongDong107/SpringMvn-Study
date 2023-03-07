@@ -10,7 +10,6 @@ import kr.co.rland.web.entity.Menu;
 @Mapper
 public interface MenuRepository {
 	
-	List<Menu> findAll();
 	List<Menu> findAll(Integer offset, 
 						Integer size,
 						String query,
@@ -21,6 +20,6 @@ public interface MenuRepository {
 //	List<Menu> findAll(int page);
 	Menu findById(long id);
 	Menu insert(Menu menu);
-	Menu update(Menu menu);
+	void update(Menu menu);
 	void delete(long id);
 }	
