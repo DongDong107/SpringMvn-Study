@@ -1,6 +1,0 @@
-spring:
-  datasource:
-    url: jdbc:mariadb://db.newlecture.com:3306/rlanddb?autoReconnect=true
-    driver-class-name: org.mariadb.jdbc.Driver
-    username: rland
-    password: 20220823
