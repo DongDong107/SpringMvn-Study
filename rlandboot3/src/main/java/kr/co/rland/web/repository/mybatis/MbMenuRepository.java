@@ -17,18 +17,31 @@ public class MbMenuRepository implements MenuRepository {
 	@Autowired
 	private SqlSession session;
 	
+	
 	@Override
-	public List<Menu> findAll() {
+	public List<Menu> findAll(Integer offset, Integer size, String query, Integer categoryId, Integer price,
+			String orderField, String orderDisr) {
 		// TODO Auto-generated method stub
-		MenuRepository menuDao = session.getMapper(MenuRepository.class);
-		
-		return menuDao.findAll();
+		MenuRepository repository = session.getMapper(MenuRepository.class);
+		return null;
+	}
+	
+	public List<Menu> findAll(Integer offset, Integer size){
+		MenuRepository repository = session.getMapper(MenuRepository.class);
+		return
 	}
 	
 	@Override
-	public List<Menu> findAll(int page) {
+	public List<Menu> findAllByIds(List<Long> ids) {
 		// TODO Auto-generated method stub
-		return null;
+		MenuRepository repository = session.getMapper(MenuRepository.class);
+		return repository.findAllByIds(ids);
+	}
+	
+	@Override
+	public void update(Menu menu) {
+		// TODO Auto-generated method stub
+		
 	}
 	
 	@Override
@@ -36,24 +49,39 @@ public class MbMenuRepository implements MenuRepository {
 		// TODO Auto-generated method stub
 		return null;
 	}
-
+	
 	@Override
 	public Menu insert(Menu menu) {
 		// TODO Auto-generated method stub
 		return null;
 	}
-
-	@Override
-	public Menu update(Menu menu) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
+	
 	@Override
 	public void delete(long id) {
 		// TODO Auto-generated method stub
 		
 	}
+	
+//	@Override
+//	public List<Menu> findAll() {
+//		// TODO Auto-generated method stub
+//		MenuRepository menuDao = session.getMapper(MenuRepository.class);
+//		
+//		return menuDao.findAll();
+//	}
+	
+//	@Override
+//	public List<Menu> findAll(int page) {
+//		// TODO Auto-generated method stub
+//		return null;
+//	}
+
+
+//	@Override
+//	public Menu update(Menu menu) {
+//		// TODO Auto-generated method stub
+//		return null;
+//	}
 
 	
 

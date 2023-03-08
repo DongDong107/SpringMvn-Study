@@ -7,7 +7,7 @@ import org.apache.ibatis.annotations.Mapper;
 
 import kr.co.rland.web.entity.Menu;
 
-@Mapper
+//@Mapper
 public interface MenuRepository {
 	
 	List<Menu> findAll(Integer offset, 
@@ -18,6 +18,7 @@ public interface MenuRepository {
 						String orderField,
 						String orderDisr);	
 //	List<Menu> findAll(int page);
+	List<Menu> findAllByIds(List<Long> ids);
 	Menu findById(long id);
 	Menu insert(Menu menu);
 	void update(Menu menu);

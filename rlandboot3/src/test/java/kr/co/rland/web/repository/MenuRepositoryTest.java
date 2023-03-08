@@ -1,5 +1,6 @@
 package kr.co.rland.web.repository;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.junit.jupiter.api.Test;
@@ -17,7 +18,7 @@ class MenuRepositoryTest {
 	@Autowired
 	private MenuRepository repository;
 	
-	@Test
+	//@Test
 	void testFindAll() {
 		List<Menu> list = repository.findAll(
 				0, 10, null, null, null, "regDate", "desc");
@@ -27,8 +28,20 @@ class MenuRepositoryTest {
 		}
 //		System.out.println(list);
 	}
-
+	
 	@Test
+	void testFindAllByIds() {
+		List<Long> ids = new ArrayList<>();
+		ids.add(616L);
+		ids.add(617L);
+		ids.add(713L);
+		ids.add(737L);
+		
+		List<Menu> list = repository.findAllByIds(ids);
+		System.out.println(list);
+	}
+
+	//@Test
 	void testUpdate() {
 		Menu menu = new Menu();
 		menu.setId(856);

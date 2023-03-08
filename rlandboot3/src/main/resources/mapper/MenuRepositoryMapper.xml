@@ -4,7 +4,11 @@
   PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
   "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="kr.co.rland.web.repository.MenuRepository">
-	<select id="findAll" resultType="kr.co.rland.web.entity.Menu">
+	<resultMap id="menuResultMap" type="Menu">
+	  <result property="regDate" column="reg_date"/>	  
+	</resultMap>
+	
+	<select id="findAll" resultMap="menuResultMap">
 		select * 
 		from menu
 		<trim prefix="WHERE" prefixOverrides="AND |OR ">
@@ -22,13 +26,25 @@
 		limit #{size} offset #{offset}
 		
 	</select>
-	<select id="findById" resultType="kr.co.rland.web.entity.Menu">
+	<select id="findAllByIds" resultMap="menuResultMap">
+		select *
+		from menu
+		<where>
+		    <foreach item="id" index="index" collection="list"
+		        open="ID in (" separator="," close=")">
+		          #{id}
+		    </foreach>
+	  	</where>	
+	</select>
+	<select id="findById" resultType="Menu">
 		select *
 		from menu
 		where id=#{id}
 	</select>
-	<insert id="insert"></insert>
-	<update id="update" parameterType="kr.co.rland.web.entity.Menu">
+	<insert id="insert">
+	
+	</insert>
+	<update id="update" parameterType="Menu">
 		update menu
 		 <trim prefix="SET" suffixOverrides=",">
 		 	<if test="price != null">
