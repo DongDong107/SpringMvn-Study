@@ -10,25 +10,31 @@ import org.springframework.stereotype.Repository;
 import kr.co.rland.web.entity.Menu;
 import kr.co.rland.web.repository.MenuRepository;
 
-//@Repository
+@Repository
 public class MbMenuRepository implements MenuRepository {
 	
 	// mybatis 콩자루에서 꺼내와 주는 친구	
 	@Autowired
 	private SqlSession session;
 	
+	@Override
+	public List<Menu> findAll() {
+		MenuRepository repository = session.getMapper(MenuRepository.class);
+		return repository.findAll(0,10,null,null,null,null,null);		
+	}
 	
 	@Override
 	public List<Menu> findAll(Integer offset, Integer size, String query, Integer categoryId, Integer price,
 			String orderField, String orderDisr) {
 		// TODO Auto-generated method stub
 		MenuRepository repository = session.getMapper(MenuRepository.class);
-		return null;
+		return repository.findAll(offset,size,query,categoryId,price,orderField,orderDisr);
 	}
 	
+	@Override
 	public List<Menu> findAll(Integer offset, Integer size){
 		MenuRepository repository = session.getMapper(MenuRepository.class);
-		return
+		return repository.findAll(offset,size,null,null,null,null,null);
 	}
 	
 	@Override
