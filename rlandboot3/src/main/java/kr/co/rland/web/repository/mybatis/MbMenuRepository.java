@@ -10,37 +10,52 @@ import org.springframework.stereotype.Repository;
 import kr.co.rland.web.entity.Menu;
 import kr.co.rland.web.repository.MenuRepository;
 
-@Repository
+//@Repository
 public class MbMenuRepository implements MenuRepository {
 	
 	// mybatis 콩자루에서 꺼내와 주는 친구	
-	@Autowired
-	private SqlSession session;
 	
-	@Override
-	public List<Menu> findAll() {
-		MenuRepository repository = session.getMapper(MenuRepository.class);
-		return repository.findAll(0,10,null,null,null,null,null);		
+	private SqlSession session;
+	private MenuRepository repository;
+	
+	public MbMenuRepository() {
+		// TODO Auto-generated constructor stub
 	}
+	
+	@Autowired
+	public MbMenuRepository(SqlSession session) {
+		super();
+		this.session = session;
+		this.repository = session.getMapper(MenuRepository.class); 
+	}
+
 	
 	@Override
 	public List<Menu> findAll(Integer offset, Integer size, String query, Integer categoryId, Integer price,
 			String orderField, String orderDisr) {
 		// TODO Auto-generated method stub
-		MenuRepository repository = session.getMapper(MenuRepository.class);
-		return repository.findAll(offset,size,query,categoryId,price,orderField,orderDisr);
+//		MenuRepository repository = session.getMapper(MenuRepository.class);
+		return repository.findAll(null,null,null,null,null,null,null);
 	}
 	
-	@Override
-	public List<Menu> findAll(Integer offset, Integer size){
-		MenuRepository repository = session.getMapper(MenuRepository.class);
-		return repository.findAll(offset,size,null,null,null,null,null);
-	}
+//	@Override
+//	public List<Menu> findAll() {
+////		MenuRepository repository = session.getMapper(MenuRepository.class);
+////		return repository.findAll(0,10,null,null,null,"reg_date","desc");
+//		return session.selectList("kr.co.rland.web.repository.MenuRepository.findAll");
+//		
+//	}
+//	
+//	@Override
+//	public List<Menu> findAll(Integer offset, Integer size){
+////		MenuRepository repository = session.getMapper(MenuRepository.class);
+//		return repository.findAll(offset,size,null,null,null,"reg_date","desc");
+//	}
 	
 	@Override
 	public List<Menu> findAllByIds(List<Long> ids) {
 		// TODO Auto-generated method stub
-		MenuRepository repository = session.getMapper(MenuRepository.class);
+//		MenuRepository repository = session.getMapper(MenuRepository.class);
 		return repository.findAllByIds(ids);
 	}
 	

@@ -14,24 +14,27 @@ import org.springframework.boot.test.context.SpringBootTest;
 import kr.co.rland.web.entity.Menu;
 
 @AutoConfigureTestDatabase(replace = Replace.NONE)
-//@MybatisTest
-@AutoConfigureMybatis
-@SpringBootTest
+@MybatisTest
+// 아래 어노테이션 검색 한 번 해보기
+//@AutoConfigureMybatis
+//@SpringBootTest
 class MenuRepositoryTest {
 	
 	@Autowired
-	private MenuRepository repository;
+	private MenuRepository repository;	
+	
 	
 	@Test
 	void testFindAll() {
-//		List<Menu> list = repository.findAll(
-//				0, 10, null, null, null, "regDate", "desc");
-		List<Menu> list = repository.findAll();
+		List<Menu> list = repository.findAll(0,10,null,null,null,null,null);
 		for(Menu e : list) {
 			System.out.println(e);
 		}
-//		System.out.println(list);
 	}
+	
+	/*
+	아메리카노
+	 */
 	
 //	@Test
 	void testFindAllByIds() {
@@ -57,6 +60,12 @@ class MenuRepositoryTest {
 		
 //		Menu m = repository.update(menu);
 //		System.out.println(m);
+	}
+	
+	@Test
+	void testCount () {
+		int count = repository.count(null, null, null);
+		System.out.println(count);
 	}
 
 }
