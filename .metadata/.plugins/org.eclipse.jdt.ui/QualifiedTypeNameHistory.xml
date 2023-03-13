@@ -46,6 +46,10 @@
     <fullyQualifiedTypeName name="kr.co.rland.web.entity.Menu"/>
     <fullyQualifiedTypeName name="org.springframework.boot.test.autoconfigure.jdbc.AutoConfigureTestDatabase"/>
     <fullyQualifiedTypeName name="java.util.ArrayList"/>
-    <fullyQualifiedTypeName name="org.mybatis.spring.boot.test.autoconfigure.AutoConfigureMybatis"/>
     <fullyQualifiedTypeName name="org.springframework.boot.test.context.SpringBootTest"/>
+    <fullyQualifiedTypeName name="org.springframework.transaction.annotation.Transactional"/>
+    <fullyQualifiedTypeName name="org.mybatis.spring.boot.test.autoconfigure.AutoConfigureMybatis"/>
+    <fullyQualifiedTypeName name="java.lang.reflect.Proxy"/>
+    <fullyQualifiedTypeName name="kr.co.rland.web.aop.Calculator"/>
+    <fullyQualifiedTypeName name="java.lang.reflect.InvocationHandler"/>
 </qualifiedTypeNameHistroy>

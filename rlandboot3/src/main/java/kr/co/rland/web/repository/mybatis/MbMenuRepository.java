@@ -82,6 +82,12 @@ public class MbMenuRepository implements MenuRepository {
 		// TODO Auto-generated method stub
 		
 	}
+
+	@Override
+	public int count(String query, Integer categoryId, Integer price) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
 	
 //	@Override
 //	public List<Menu> findAll() {
