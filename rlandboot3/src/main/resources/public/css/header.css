@@ -1,0 +1,115 @@
+    .header{
+        box-sizing: border-box;
+        width: 100%;
+        height: 50px;
+        background-color: #0006;
+    
+        /* layout */        
+        top:0px;
+        z-index: 999;
+    
+    }
+
+    .fixed-header{
+        position: fixed;
+    }
+        
+        .header-title{
+        
+            /* text */
+            font-family: "Segoe UI", "굴림", "돋움", Arial, Helvetica, sans-serif;
+            font-weight: normal;
+            font-size: 16px;
+            color:#fff;
+            font-stretch: ultra-expanded;
+                
+            /* layout */        
+        
+            /* item layout */
+            display: inline-block;        
+        
+            /* effect */
+        
+        }
+        .header>div{
+            
+            /* layout */
+            height: 100%;
+    
+            /* item layout */
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 15px;
+            box-sizing: border-box;
+        }
+    
+        .header .logo{
+            height: 40px;
+        }
+
+        .header .main-menu{
+            display: inline-flex;
+        }
+        
+
+        .header .main-menu li{
+            margin-left: 10px;
+        }
+
+        .header .main-menu li:first-child{
+            margin-left: 0px;
+        }
+
+        .header .main-menu a{
+            color:#fff;
+        }
+
+        /* --- menu-show ------------------------------- */
+        .header .main-menu.main-menu-show{
+            display: flex !important;
+        }
+        
+        .header .main-menu.main-menu-show li{
+            
+        }
+        .header .main-menu.main-menu-show::before{
+            display: block;
+            content: '';
+            background-color: #000c;    
+            position: fixed;
+            left:0;
+            top: 0;
+            width:100vw;
+            height: 100vh;
+        
+        }
+        .header .main-menu.main-menu-show::after{
+            position: fixed;
+            content: '';
+            right: 0;
+            top:0;
+            width:70%;
+            height: 100vh;
+            background-color: #fff;
+        }
+
+        .header .main-menu.main-menu-show a{
+            color:#000;
+        }
+        /* --- Status --------------------------- */
+    
+@media screen and (min-width: 768px) {
+
+}
+
+@media all and (min-width:1000px) {
+
+    .header>div{
+        /* layout */
+        width:1000px;
+        margin-left: auto;
+        margin-right: auto;
+
+    }
+}

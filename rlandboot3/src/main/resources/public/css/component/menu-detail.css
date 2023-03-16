@@ -1,0 +1,112 @@
+/*-------------------------------
+/menu/detail
+---------------------------------*/
+.menu-detail{
+	margin: auto;
+}
+
+.menu-detail header .img-div{
+	width: 100%;
+	height: 240px;
+}
+
+.menu-detail header .img-div img{
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+}
+
+.menu-detail article{	
+	margin-top: 24px;
+	padding: 0 var(--padding-side-mobile);
+}
+
+.menu-detail article header{
+	display: flex;
+	justify-content: space-between;
+}
+
+.menu-detail article p{
+	margin-top: 12px;
+}
+
+.menu-detail > div {
+	margin: 40px 0;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.menu-detail > div > a {
+	margin: 0 10px;
+}
+
+.menu-detail .btn-modify{
+	background-color: var(--color-btn-main);
+}
+
+.menu-detail .btn-remove{
+	background-color: var(--color-btn-warning);
+}
+
+@media screen and (min-width: 768px) {
+
+    /*-------------------------------
+    /menu/detail
+    ---------------------------------*/
+    .menu-detail{
+        display: grid;
+        grid-template :
+		"img menu-info"  150px
+		"img nutrition-info" 200px
+		"btn btn" 80px/
+		315px 1fr;
+        grid-column-gap: 20px;
+
+    }
+
+    .menu-detail header{
+        grid-area: img;
+    }
+
+    .menu-detail header>h1{
+        font-size:var(--font-size-title1);
+        display: block;
+    }
+
+    .menu-detail header .img-div{
+        height: 290px;
+        margin-top: 30px;
+    }
+
+    .menu-detail article,.nutrition-info{
+        padding: 0;
+    }
+
+    .menu-detail article{
+        grid-area: menu-info;
+    }
+
+    .menu-detail article header{
+        padding-bottom: 12px;
+        border-bottom: solid 2px var(--color-border);
+        justify-content: space-between;
+    }
+
+    .menu-detail > div {
+        grid-area: btn;
+        align-items: center;
+
+        margin: 0;
+    }
+
+    .menu-detail > div a{
+        width: var(--btn-width);
+        height: var(--btn-height);
+        text-align: center;
+        margin: 10px;
+    }
+
+
+
+}

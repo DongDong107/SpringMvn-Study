@@ -1,0 +1,43 @@
+/*----------------------
+	/aside
+------------------------*/
+
+.aside-bar::before{
+    display: block;
+    content: '';
+    background-color: #000c;
+    position: fixed;
+    left:0;
+    top: 0;
+    width:100vw;
+    height: 100vh;
+    
+    
+}
+
+.aside-bar-content {    
+    position: fixed;    
+    right: 0px;
+    top:0px;
+    width:70%;
+    height: 100vh;
+    box-sizing: border-box;
+    
+    background-color: #fff;
+    padding: 20px;
+
+	z-index: 1000;
+}
+
+@media screen and (min-width: 768px) {
+    .aside-bar::before,
+    .aside-bar-content {    
+        
+        display: none;
+    }
+}
+
+@media all and (min-width:1000px) {
+
+    
+}

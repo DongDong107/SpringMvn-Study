@@ -1,0 +1,74 @@
+<!-- 뉴렉처 짱
+최종 수정일: 2022.05.30-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>관리자 사이드바 메뉴</title>
+    <link rel="stylesheet" href="../../css/admin/inc-aside.css" type="text/css">
+    <script>
+
+    </script>
+</head>
+<body>
+    <aside class="aside-background">
+        <header class="top-header">
+            <h1 class="d-none">프로필 어사이드</h1>
+            <div class="d-inline-block"><a href="../../index.html" class="img-btn-home ">홈</a></div>
+            <div class="d-inline-block"><a href="" class="mypage">내정보</a></div>
+            <div class="d-inline-block"><a href="" class="img-btn-close">닫기</a></div>
+        </header>
+        <!------------------------------------------------------------------------------------------------------>
+        <section class="profile-section">
+            <h1 class="d-none">프로필정보</h1>
+            <div class="profile-div">
+                <div class="profile-change-btn-div">
+                    <a href="" class="btn-white-blue">프로필변경</a>
+                </div>
+                <div class="profile-image">
+                    <img src="../../images/profile-temp.png" alt="프로필이미지">
+                    <a href="" id="change-img-btn" class="btn-white-blue">이미지변경</a>
+                </div>
+                <div class="profile-text">
+                    <span>newlec</span>
+                    <span>newlec@namoolab.com</span>
+                </div>
+            </div>
+            <div><a href="../../index.html" class="btn-brown">로그아웃</a></div>
+        </section>
+        <!------------------------------------------------------------------------------------------------------>
+        <section class="manage-menu-list">
+            <h1 class="d-none">관리자 메뉴</h1>
+            <nav>
+                <h1 class="manage-menu-title">매장관리</h1>
+                <ul>
+                    <li><a href="" class="manage-order">주문관리</a></li>
+                    <li><a href="menu-list.html" class="manage-menu">메뉴관리</a></li>
+                    <li><a href="../notice/list.html" class="manage-info">공지사항관리</a></li>
+                    <li><a href="" class="manage-member">회원관리</a></li>
+                    <li><a href="../category/list.html" class="manage-cate">카테고리관리</a></li>
+                </ul>
+            </nav>
+            <!------------------------------->
+            <nav>
+                <h1 class="manage-menu-title">영업관리</h1>
+                <ul>
+                    <li><a href="../index.html" class="manage-sale">매출조회</a></li>
+                    <li><a href="" class="manege-purchase">매입관리</a></li>
+                    <li><a href="" class="naver-blog">네이버 블로그</a></li>
+                </ul>
+            </nav>
+            <!------------------------------->
+            <nav>
+                <h1 class="manage-menu-title">환경설정</h1>
+                <ul>
+                    <li><a href="" class="alarm-set">알림설정</a></li>
+                </ul>
+                <!-- <div class="alarm-set-div"></div> -->
+            </nav>
+        </section>
+    </aside>
+</body>
+</html>

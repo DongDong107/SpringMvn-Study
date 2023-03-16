@@ -1,0 +1,45 @@
+@charset "UTF-8";
+
+html{
+	height: 100%;
+}
+
+body{
+	height: 100%;
+	display: flex;
+	flex-direction: column;	
+}
+
+main {
+	flex-grow: 1;
+	padding: var(--padding-upside-mobile) var(--padding-side-mobile);
+}
+
+@media screen and (min-width: 1024px) {
+
+/*------------------------body main--------------------------*/
+
+	main {
+		width:1000px;
+		margin: auto;
+		max-width: var(--content-max-width-pc);
+		min-width: var(--content-min-width-pc);
+		
+		/* padding: var(--padding-upside-pc) var(--padding-side-pc); */
+	}
+
+	/*-------------------------------
+	/menu/list
+	---------------------------------*/
+	/*nav*/
+	.nav-category li{
+		width: var(--btn-width-large);
+	}
+
+	/*-------------------------------
+	/menu/detail
+	---------------------------------*/
+	.menu-detail{
+		grid-column-gap: 40px;
+	}
+}

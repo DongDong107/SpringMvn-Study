@@ -1,0 +1,122 @@
+.sign-up .font-nanum{
+	font-size: var(--font-size-title1);
+	font-weight: bold;
+}
+
+.sign-up form{
+	margin-top: 30px;
+}
+
+.sign-up form .input-div{
+
+	margin-top: 30px;
+
+	display: grid;
+	grid-template: 
+	"id id id" 20px
+	"input input icon" 40px
+	"warning warning none" 20px
+	/ 1fr 1fr 40px; 
+	row-gap: 7px;
+	align-items: center;
+}
+
+.sign-up form .input-div label{
+	font-weight: bold;
+	padding-left: 17px;
+	grid-area: id;
+}
+
+.sign-up form .input-div input{
+	border-color: var(--color-bd-color);
+	padding: 13px 20px;
+	grid-area: input;
+}
+
+.sign-up form .input-div input::placeholder{
+	color: var(--color-bg-dark);
+}
+
+
+
+.sign-up form .warning-text{
+	margin-top: 0;
+	color: var(--color-btn-warning);
+	display: flex;
+	justify-content: flex-end;
+	grid-area: warning;
+}
+
+.sign-up form .deco-confirm,.deco-reject{
+	margin-left: 9px;
+}
+
+.sign-up form .submit-box{
+	margin-top: 100px;
+	display: flex;
+	justify-content: center;
+}
+
+.sign-up form .submit-box input{
+	width: 100%;
+	padding-top: 11px;
+	padding-bottom: 11px;
+}
+
+
+@media screen and (min-width: 768px) {
+
+/*----------------------
+    /user/sign-up
+    ------------------------*/
+
+    .sign-up form{
+        border: solid 1px var(--color-bd-color);
+        padding: 44px 100px ;
+    }
+
+    .sign-up form .input-div{
+        grid-template: 
+        "id input icon" 40px
+        "warning warning none" 20px
+        / 140px 1fr 40px;
+        align-items: center;
+        /* justify-content: center; */
+    }
+
+    .sign-up form .input-div label{
+        display: inline-block;
+        
+        font-size: var(--font-size-title2);
+        font-weight: bold;
+        padding: 0;
+    }
+
+    .sign-up form .input-div input{
+        display: inline-block;
+        flex-grow: 1;
+        margin-top: 0;
+        border-radius: 0;        
+    }
+
+    .sign-up form .submit-box{
+        justify-content: center;
+    }
+
+    .sign-up form .submit-box .btn{
+        font-weight: bold;
+        width: 150px;
+        padding: 11px 47px;
+        cursor: pointer;
+    }
+
+    .sign-up form .submit-box input{
+        border-radius: 0;
+    }
+
+    .sign-up form .submit-box input[type=button]{
+        display: inline-block;
+        color: var(--color-text-dark);
+        margin-left: 11px;
+    }
+}

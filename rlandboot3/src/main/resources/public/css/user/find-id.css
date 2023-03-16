@@ -1,0 +1,91 @@
+/*----------------------
+/user/find-id
+/user/find-pwd
+------------------------*/
+.find-info{
+	padding: 100px 0;
+}
+
+.find-info form{
+	padding: 10px 0;
+
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.find-info form input[type=text]{
+	width: 100%;
+	height: var(--btn-height);
+}
+
+.find-info form input[type=submit]{
+	min-width: 50px;
+	height: var(--btn-height);
+	margin: 20px 0;
+}
+
+.find-info form input[type=submit]:hover {
+	cursor: pointer;
+}
+
+.find-info div{
+	display: flex;
+	justify-content: center;
+}
+
+.find-info div a{
+	margin: 0 10px;
+}
+
+.find-info div a:nth-child(1) {
+	color: var(--color-main);
+}
+
+
+
+
+/*----------------------
+/user/find-id
+/user/find-pwd
+------------------------*/
+.find-info{
+	padding: 100px 0;
+}
+
+.find-info form{
+	padding: 10px 0;
+
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.find-info form input[type=text]{
+	width: 100%;
+	height: var(--btn-height);
+}
+
+.find-info form input[type=submit]{
+	min-width: 50px;
+	height: var(--btn-height);
+	margin: 20px 0;
+}
+
+.find-info form input[type=submit]:hover {
+	cursor: pointer;
+}
+
+.find-info div{
+	display: flex;
+	justify-content: center;
+}
+
+.find-info div a{
+	margin: 0 10px;
+}
+
+.find-info div a:nth-child(1) {
+	color: var(--color-main);
+}
+
