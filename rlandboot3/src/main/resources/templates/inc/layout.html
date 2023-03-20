@@ -1,5 +1,8 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
+<html xmlns:th="http://www.thymeleaf.org"
+xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+>
+
 	<head>
 	    <meta charset="UTF-8">
 	    <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -11,6 +14,10 @@
 	    <link href="../css/header.css" type="text/css" rel="stylesheet" >
 	    <link href="../css/footer.css" type="text/css" rel="stylesheet" >
 		<link href="../css/component/aside.css" type="text/css" rel="stylesheet" >
+		
+		<link href="../css/component/menu-detail.css" type="text/css" rel="stylesheet" >
+		<link href="../css/component/nutrition-info.css" type="text/css" rel="stylesheet" >
+	
 		<link href="../css/component/cart-section.css" type="text/css" rel="stylesheet" >
 		<link href="../css/component/menu-category.css" type="text/css" rel="stylesheet" >
 	    <link href="../css/component/menu-section.css" type="text/css" rel="stylesheet" >
@@ -28,11 +35,13 @@
 	    
 	    <!-- 헤더부분  -->
 	    <!-- replace/insert/ -->
-	    <div th:replace=""></div>
+	    <div th:replace="~{inc/header}"></div>
 		<!--  -->
 		<!-- 메인부분 -->
+		<div layout:fragment="main"></div>
 	    <!--  -->   
 		<!-- 푸터부분 -->
+		<div th:replace="~{inc/footer}"></div>
 	
 	
 	</body>

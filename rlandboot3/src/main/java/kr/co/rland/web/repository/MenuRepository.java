@@ -6,6 +6,7 @@ import java.util.List;
 import org.apache.ibatis.annotations.Mapper;
 
 import kr.co.rland.web.entity.Menu;
+import kr.co.rland.web.entity.MenuView;
 
 @Mapper
 public interface MenuRepository {
@@ -21,6 +22,13 @@ public interface MenuRepository {
 //	List<Menu> findAll(int page);
 //	List<Menu> findAll(Integer offset, 
 //						Integer size);	
+	List<MenuView> findViewAll(Integer offset, 
+						Integer size,
+						String query,
+						Integer categoryId,
+						Integer price,					
+						String orderField,
+						String orderDisr);
 	List<Menu> findAllByIds(List<Long> ids);
 	Menu findById(long id);
 	int count(

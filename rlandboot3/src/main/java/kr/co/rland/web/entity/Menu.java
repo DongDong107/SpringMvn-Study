@@ -11,8 +11,16 @@ public class Menu {
 	private String img;
 	private Integer categoryId;
 	private long regMemberId;
+	private String description;
 	
-	
+	public String getDescription() {
+		return description;
+	}
+
+	public void setDescription(String description) {
+		this.description = description;
+	}
+
 	public Menu() {
 		
 	}	

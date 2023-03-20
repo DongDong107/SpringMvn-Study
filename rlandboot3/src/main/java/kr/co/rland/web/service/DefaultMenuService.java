@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import kr.co.rland.web.entity.Menu;
+import kr.co.rland.web.entity.MenuView;
 import kr.co.rland.web.repository.MenuRepository;
 
 @Service
@@ -37,6 +38,69 @@ public class DefaultMenuService implements MenuService {
 		menu.setId(771L);
 		menu.setPrice(40000);
 		repository.update(menu);		
+	}
+
+
+	@Override
+	public Menu getById(long id) {		
+		Menu menu = repository.findById(id);		
+		return menu;
+	}
+
+	@Override
+	public List<Menu> getList(int page) {
+		return null;
+	}
+
+	@Override
+	public List<Menu> getList(int page, String query) {
+		return null;
+	}
+
+	@Override
+	public List<Menu> getList(int page, int category) {
+		return null;
+	}
+
+	@Override
+	public List<Menu> getList(int page, int categoryId, String query) {
+		return null;
+	}
+
+	@Override
+	public List<MenuView> getViewList() {
+		int page = 1;
+		int size = 10;
+		List<MenuView> list = repository.findViewAll(page, size, null, null, null, null, null);
+		return list;
+	}
+
+	@Override
+	public List<MenuView> getViewList(int page) {
+		int size = 10;
+		List<MenuView> list = repository.findViewAll(page, size, null, null, null, null, null);
+		return list;
+	}
+
+	@Override
+	public List<MenuView> getViewList(int page, String query) {
+		int size = 10;
+		List<MenuView> list = repository.findViewAll(page, size, query, null, null, null, null);
+		return list;
+	}
+
+	@Override
+	public List<MenuView> getViewList(int page, int categoryId) {
+		int size = 10;
+		List<MenuView> list = repository.findViewAll(page, size, null, null, categoryId, null, null);
+		return list;
+	}
+
+	@Override
+	public List<MenuView> getViewList(int page, int categoryId, String query) {
+		int size = 10;
+		List<MenuView> list = repository.findViewAll(page, size, query, null, categoryId, null, null);
+		return list;
 	}
 
 }
