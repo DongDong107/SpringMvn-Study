@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" type="text/css" href="../../css/member/order/basket/index.css">
+    <title>basket</title>
+</head>
+<body>
+    <header class="header">
+        <h1>장바구니</h1>        
+        <div class="header-btn">
+            <a href="">뒤로</a>
+            <a href="">메뉴</a>
+        </div>
+    </header>
+
+    <section class="menu">
+        <h1>선택한 메뉴</h1>
+        <div class="confirm-menu">            
+            <form action="">
+                <img src="../../images/8 Small.jpeg" alt="아메리카노">
+                <span>알랜드 커피</span>
+                <span>ICED/Large</span>
+                <span>4,500</span>
+                <span>13,500</span>                    
+                <input type="button" name="minus" id="minus" value="">
+                <input type="text" name="num" id="num" value="3">
+                <input type="button" name="plus" id="plus" value="">
+            </form>   
+        
+            <form action="">
+                <img src="../../images/28.png" alt="버터쿠키">
+                <span>알랜드 커피</span>
+                <span>Large</span>
+                <span>2,000</span>
+                <span>4,000</span>                    
+                <input type="button" name="minus" id="minus" value="">
+                <input type="text" name="num" id="num" value="2">
+                <input type="button" name="plus" id="plus" value="">
+            </form>
+            
+            <div class="total-price">
+                <span>총 5건</span>
+                <span>17,500원</span>
+            </div>
+        </div>
+
+        <form class="take-out d-inline-block" action="">
+            <input type="checkbox" id="to">
+            <label for="to">전체포장</label>
+        </form>
+    </section>
+
+    <div class="order-btn">
+        <div>
+            <a href="./confirm.html">주문하기</a>
+        </div>
+        <div>
+            <a href="">취소하기</a>
+        </div>        
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,212 @@
+
+
+/* --------------------------------------------- */
+.menu{
+    padding:20px 0;
+
+    transition: 1s;
+}
+
+.menu:last-child{
+    border:none;
+}
+
+.menu form{
+    box-sizing: border-box;
+    display: grid;
+    grid-template: 
+    "img title title" 24px
+    "img price option" 24px
+    "img button button" 32px / 80px 1fr 1fr;
+}
+
+.menu form>h1{
+    grid-area: title;
+    margin-left: 10px;
+
+    font-size: 15px;
+}
+
+.menu-img-box{
+    grid-area: img;
+}
+
+.menu-img{
+    width: 80px;
+    height: 80px;
+    border-radius: 40px;
+    object-fit: cover;
+}
+
+.menu-price{
+    grid-area: price;
+    margin-left: 10px;
+}
+
+.menu-option-list{
+    grid-area: option;
+    justify-self: flex-end;
+}
+
+.menu-button-list{
+    grid-area: button;
+    justify-self: flex-end;
+}
+
+.menu-option-input{
+    width: 12px;
+    height: 12px;
+    border: 1px solid #A24F17;    
+}
+
+.menu-option-input-on{
+    background-color: #A24F17;    
+}
+
+.menu-option{
+    display: inline-flex;
+    align-items: center;
+}
+
+.menu-option .menu-option-input{
+    margin-right: 5px;
+}
+
+/* --- menu-reg -------------------------------- */
+
+
+.menu-reg-section .img-input{
+    box-sizing: border-box;
+    
+    width: 84px;
+    height: calc(84px - 4px);
+    object-fit: none;
+    overflow: hidden;
+    text-align: center;
+    display: inline-block;
+    
+    border-radius: 50px;
+  }
+
+  .menu-reg-section .img-input::before{
+    content: "";
+    display: inline-block;
+    height: 65px;
+  }
+/* ----------------------------------------------------- */
+
+@media (min-width: 768px) {
+
+    .menu-list{
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-gap: 20px 30px;
+    }
+
+    .menu{
+        flex-shrink: 0;        
+        padding:0 0 10px 0;
+        /* width:200px; */
+        border:1px solid #707070;
+    }
+
+    .menu:last-child{
+        border:1px solid #707070;
+    }
+
+    .menu form{
+        display: grid;
+        grid-template: 
+        "img img" 130px
+        "title price" 30px
+        "option option" 30px
+        "button button" 40px / 1fr 70px;
+    }
+
+    .menu form>h1{
+        display: flex;
+        width: 100%;
+        align-self: center;  
+        justify-self: flex-start;
+    }
+
+    .menu-img{
+        width: 100%;
+        height: 100%;
+        border-radius: 0;        
+    }
+
+    .menu-price{
+        align-self: center;  
+        justify-self: flex-end;
+        margin-right: 10px;
+    }
+
+    .menu-option-list{
+        justify-self: center;
+
+        display: flex; 
+        align-items: center;      
+    }
+
+    .menu-button-list{        
+        justify-self: center;
+
+        display: flex; 
+        align-items: center;  
+    }
+
+    /* --- reg -------------------------------- */
+   
+    .menu-reg-section{
+        
+        padding: 0;
+    }
+    
+    .menu-reg-section form{
+        display: grid;
+        grid-template: 
+        "img img" 130px
+        "title price" 30px
+        "option option" 30px
+        "button button" 40px / 1fr 100px;
+    }
+    .menu-reg-section .img-input{
+        display: inline-flex;
+        flex-direction: column;
+        height: 100%;
+        width: 100%;
+        align-items: center;
+        justify-content: center;
+        border-radius: 0;
+        background-position: center;
+    }
+
+    .menu-reg-section .img-input::before{
+        content: "이미지선택";
+        display: inline-block;
+        position: relative;
+        top:50px;        
+    }
+    
+    .menu-reg-section form .input{
+        align-self: center;
+        padding: .3em 0;
+        border-radius:0;
+        border: .5px solid #707070;
+        text-indent: 5px;
+    }
+
+    .menu-reg-section .img-input-box::before{
+        content:"";
+    }
+
+    .menu-reg-section .menu-price{
+        
+        justify-self: flex-start;
+        margin-right: 0;        
+    }
+
+}
+
+

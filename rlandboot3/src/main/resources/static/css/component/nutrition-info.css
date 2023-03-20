@@ -1,0 +1,57 @@
+
+/*영양 정보*/
+.nutrition-info{
+	padding: 0 var(--margin-side-mobile);
+}
+
+.nutrition-info header{
+	display: flex;
+	flex-direction: column-reverse;
+}
+
+.nutrition-info .common-p{
+	padding: 10px 15px;
+}
+
+.nutrition-info header div:first-child{
+	width: 100%;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	border-top: solid 1px var(--color-border);
+	border-bottom: solid 1px var(--color-border);
+	box-sizing: border-box;
+}
+
+.nutrition-info ul li{
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding-bottom: 5px;
+}
+
+.nutrition-info .tab-div{
+	height: 28px;
+	display: flex;
+	justify-content: center;
+}
+
+@media screen and (min-width: 768px) {
+
+    /* nutrition */
+
+    .menu-detail .nutrition-info{
+        grid-area: nutrition-info;
+    }
+
+    /* nutrition */
+    .nutrition-info ul{
+        display: grid;
+        grid-template-columns : repeat(2, 1fr);
+        grid-column-gap: 20px;
+    }
+
+    .nutrition-info .tab-div{
+        justify-content: center;
+    }
+}

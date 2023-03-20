@@ -1,9 +1,9 @@
 package kr.co.rland.web.controller;
 
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
 
 // 이걸 안써두면 스프링이 안읽음.
 @Controller
@@ -12,10 +12,11 @@ import org.springframework.web.bind.annotation.RestController;
 
 public class MenuController {
 	@GetMapping("list")
-	public String list() {
-		return "menulist"; // 타일즈에게 조립해달라는 조합에 대한 이름을 반환
-//		return "/WEB-INF/view/inc/layout.jsp";
-////		return "/WEB-INF/view/menu/list.jsp";
+	public String list(Model model) {
+		
+		model.addAttribute("data", "hello");
+		
+		return "menu/list"; 
 	}
 	
 	@GetMapping("detail")

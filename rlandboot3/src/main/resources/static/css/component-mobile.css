@@ -1,0 +1,640 @@
+@charset "UTF-8";
+
+
+
+
+/*-------------------------------
+/menu/list
+---------------------------------*/
+
+/*더보기*/
+.btn-next {
+	margin: 12px 0;
+	max-width: 380px;
+}
+
+/*신규 메뉴*/
+.new-menu .list{
+	/* text */ 
+	font-size: var(--font-size-title2);
+    font-weight: bold;
+    
+	/* layout */ 
+	height: 122px;
+	background-color: var(--color-bg-light);
+	border: solid 1px var(--color-bd-color);
+    
+    /* item-layout */ 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+
+
+
+
+
+
+
+/*-------------------------------
+/admin/menu/detail
+---------------------------------*/
+.admin-nav-category > div{
+	display: flex;
+	align-items: center;
+}
+
+.admin-nav-category > div > h1{
+	margin-right: 15px;
+}
+
+.menu-rcmd > header {
+	display: flex;
+	justify-content: space-between;
+}
+
+/*-------------------------------
+admin/menu/list
+---------------------------------*/
+
+.menu-list .btn-modify{
+	background-color: var(--color-btn-main);
+}
+
+
+.menu-list .btn-remove{
+	background-color: var(--color-btn-warning);
+}
+
+/*----------------------
+user/sign-up
+------------------------*/
+.sign-up .font-nanum{
+	font-size: var(--font-size-title1);
+	font-weight: bold;
+}
+
+.sign-up form{
+	margin-top: 30px;
+}
+
+.sign-up form .input-div{
+
+	margin-top: 30px;
+
+	display: grid;
+	grid-template: 
+	"id id id" 20px
+	"input input icon" 40px
+	"warning warning none" 20px
+	/ 1fr 1fr 40px; 
+	row-gap: 7px;
+	align-items: center;
+}
+
+.sign-up form .input-div label{
+	font-weight: bold;
+	padding-left: 17px;
+	grid-area: id;
+}
+
+.sign-up form .input-div input{
+	border-color: var(--color-bd-color);
+	padding: 13px 20px;
+	grid-area: input;
+}
+
+.sign-up form .input-div input::placeholder{
+	color: var(--color-bg-dark);
+}
+
+
+
+.sign-up form .warning-text{
+	margin-top: 0;
+	color: var(--color-btn-warning);
+	display: flex;
+	justify-content: flex-end;
+	grid-area: warning;
+}
+
+.sign-up form .deco-confirm,.deco-reject{
+	margin-left: 9px;
+}
+
+.sign-up form .submit-box{
+	margin-top: 100px;
+	display: flex;
+	justify-content: center;
+}
+
+.sign-up form .submit-box input{
+	width: 100%;
+	color: var(--color-text-invert);
+	font-size: var(--font-size-title3);
+	padding-top: 11px;
+	padding-bottom: 11px;
+}
+
+.sign-up form .submit-box input[type=button]{
+	display: none;
+}
+
+/*-----------------------------------
+/member/index
+--------------------------------------*/
+.member-index header div{
+	display: flex;
+	flex-direction: column;
+	row-gap: 7px;
+}
+
+.member-index header div .font-nanum{
+	font-size: var(--font-size-title1);
+	font-weight: bold;
+}
+
+.member-index .profile-section{
+	margin-top: 20px;	
+	display: grid;
+	grid-template: 
+	"img btn btn" 30px
+	"img info info" 70px/
+	100px 1fr 1fr;
+	column-gap: 17px;
+}
+
+.member-index .profile-section .img-div{
+	grid-area: img;
+	position: relative;
+}
+
+.member-index .profile-section .img-div .image-view{
+	position: absolute;
+	top: 0;
+	width: 100px;
+	height: 100px;
+} 
+
+.member-index .profile-section .img-div a,.btn-div a{
+	background-color: rgba(255, 255, 255, 0.833);
+	border-radius: 20px;
+	border-color: var(--color-border);
+	color: var(--color-strong-dark);
+	padding: var(--btn-text-sm-p-v) var(--btn-text-sm-p-h);
+}
+
+.member-index .profile-section .img-div a{	
+	position: absolute;
+	bottom: 20px;	
+	left: 10px;	
+} 
+
+.member-index .profile-section .info{
+	grid-area: info;
+	align-self: flex-end;
+}
+
+.member-index .profile-section .info li{
+	margin-top: 7px;
+}
+
+.member-index .profile-section .btn-div{
+	grid-area: btn;
+	justify-self: flex-end;
+	align-self: center;
+}
+
+.member-index .history{
+	margin-top: 35px;
+}
+
+.member-index .history h1{
+	font-size: var(--font-size-title2);
+	font-weight: bold;
+}
+
+.member-index .history ul{
+	margin-top: 14px;
+	border-top: solid 1px var(--color-bd-color);
+}
+
+.member-index .history ul li{
+	padding: 7px 13px;
+	border-bottom: solid 1px var(--color-bd-color);
+	display: flex;
+	align-items: center;
+}
+
+.member-index .history ul li .order-data{
+	display: flex;
+	flex-direction: column;
+	flex-grow: 1;
+}
+
+.member-index .history ul li>span:nth-child(2),
+							.order-data span:first-child{
+	font-weight: bold;
+}
+
+.member-index .history ul li .icon-document{
+	margin-left: 15px;
+}
+
+.member-index > .menu-rcmd {
+	background-color: white;
+}
+
+/*-----------------------------------
+	/admin/category/list
+--------------------------------------*/
+.category ul{
+	margin: 30px 0;
+	padding: 10px 0;
+	border-top: solid 1px var(--color-border);
+	border-bottom: solid 1px var(--color-border);
+}
+
+.category ul li{
+	margin: 10px 0;	
+	height: 100%;
+	padding: 0 14px;
+	display: flex;
+	align-items: center;	
+}
+
+.category ul li.nav-selected, .category ul li:hover, .category ul li.register-li-template{
+	background-color: var(--color-main-light);
+	border: none;
+	border-radius: 20px;	
+}
+
+.category ul li a:first-child, .category ul li.register-li-template form input[type="text"]{
+	font-size: var(--font-size-title3);
+	flex-grow: 1;
+	height: 100%;
+	padding: 6px 0;
+	display: inline-block;
+}
+
+.category ul li .btn{
+	width: 18px;
+	height: 18px;
+}
+
+.category ul li .btn-remove-sm{	
+	margin-left: 5px;
+	background-color: var(--color-btn-warning);
+}
+
+.category ul li .btn-save-sm{	
+	margin-left: 5px;
+	background-color: var(--color-strong);
+}
+
+.category ul li.register-li-template form {
+	width: 100%;
+}
+
+.category ul li.register-li-template form input[type='text']{
+	width: 100%;
+	
+	margin-bottom: 6px;
+	
+	background-color: transparent;
+	border: none;
+	border-bottom: solid 1px var(--color-text);
+}
+
+.category div{
+	display: flex;
+	justify-content: center;
+}
+
+.category div a{
+	padding: var(--btn-text-p-v) var(--btn-text-p-h);
+}
+
+.category div .btn-cancel{
+	margin-left: 5px;
+}
+
+.menu-list-element div a{
+	margin-left: 4px;
+}
+
+.menu h1{
+	font-size: var(--font-size-title3);
+	font-weight: bold;
+}
+
+/*----------------------
+	/user/login
+------------------------*/
+.login {
+	padding: 100px 30px;
+}
+
+.login form{
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.login form div{
+	margin-bottom: 10px;
+}
+
+.login form div input[type=submit],
+.login form div a{
+	width: var(--btn-width);
+	height: var(--btn-height);
+	text-align: center;
+	margin: 0 10px;
+}
+
+.login form .d-flex input[type=text],
+.login form .d-flex input[type=password]{
+	width: 280px;
+	height: 40px;
+}
+
+.login form .d-flex input[type=checkbox]{
+	margin-right: 10px;
+}
+
+.register {
+	padding: 0 30px;
+	margin: 20px 0;
+
+	display: flex;
+	flex-direction: column;
+	align-items: end;
+}
+
+.register a:nth-child(2){
+	color: var(--color-main-dark);
+}
+
+
+.social-login {
+	margin-bottom: 20px;
+
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.social-login div{
+	width: 100%;
+
+	background-color: var(--color-bg-gray);
+
+	margin-top: 10px;
+	padding: 10px;
+	
+	display: flex;
+	justify-content: center;
+}
+
+/*----------------------
+	/admin/member/list
+------------------------*/
+.user-list{
+	margin-bottom: 20px;
+}
+
+.user-list-element{
+	border-bottom: solid var(--border-weight) var(--color-border);
+	padding: 15px 0; /*리스트 아이템 위 아래 패딩*/
+	
+	display: flex;
+	justify-content: space-between;
+}
+
+.user-list-element a:first-child{
+	display: grid;
+	grid-template:
+	"img name" 24px
+	"img email" 20px
+	"img regDate" 20px
+	"img orderDate" 20px
+	/ 85px 1fr;
+	grid-column-gap: 10px;
+	flex-grow: 1;
+}
+
+.user-list-element a img{
+	grid-area: img;
+
+	width: 100%;
+	height: 100%;
+}
+
+.user-list-element .btn-remove{
+	grid-area: btn;
+
+	align-self: end;
+}
+
+/*----------------------
+	/notice/list
+------------------------*/
+
+.notice-list ul{
+	margin: 30px 0;
+	margin-top: 14px;
+	
+	padding: 10px 0;
+	border-top: solid 1px var(--color-border);
+	border-bottom: solid 1px var(--color-border);
+}
+
+
+
+.notice-list ul li{
+	padding: 7px 13px;
+	border-bottom: solid 1px var(--color-bd-color);
+	display: flex;
+	align-items: center;
+}
+
+.board-item {
+	cursor: pointer;
+}
+
+.notice-list details summary::marker{font-size:0;}
+
+.board-item .board-item-title span {
+	font-size: var(--font-size-title3);
+	font-weight: bold;
+    height: 100%;
+    padding: 6px 0;
+    display: inline-block;
+}
+
+.board-item .board-item-title span:nth-child(2) {
+	font-size: var(--font-size-normal);
+    padding-top: 10px;
+    
+    color: #B8B8B8;
+}
+
+.board-item .board-item-ctt {
+		font-size: var(--font-size-title3);
+    height: 100%;
+    padding: 6px 0;
+    display: inline-block;
+}
+
+
+
+.top-header{
+    display: flex;
+    justify-content: space-between; /* 처음과 끝이 붙고 사이는 고르게 정렬*/
+
+
+    padding: 0 20px;    /*상하 좌우*/
+}
+
+.login-section{
+    margin-top: 40px;
+
+    height: 30px;   /*ㅠㅠ 왜 이걸해야 높이가..*/
+}
+
+    .login-section>div{
+        margin-left: 36%;
+    }
+
+
+.main-section{
+    padding: 0 20px;
+}
+    .info-header{
+        margin-top: 40px;
+        display: flex;
+        justify-content: space-between;
+    }
+
+.div-info-list{
+    margin-top: 10px;
+
+    border-top: 1px solid #707070;
+}
+
+    .div-info-list>article{
+        display: grid;
+        
+        /*grid-template-rows: 44px 15px;*/
+        grid-template-columns: repeat(3, 74px) 20px;
+        grid-template-areas: 
+            ". . . ."
+            "title title title btn"
+            "ctt ctt ctt ctt"
+            ". . date date";
+        align-content: space-around;   
+
+
+        min-height: 60px;
+        padding: 13px 0;
+
+        text-align: center;
+        border-bottom: 1px solid #707070;
+
+    }
+        .div-info-list>article>h1, .aside-article-title{
+            grid-area: title;
+           
+
+            text-align: center;
+
+            font-size: 13px;
+            font-weight: normal;
+        }
+
+        .aside-article-ctt{
+            grid-area: ctt;
+        }
+
+        .aside-article-btn{
+            grid-area: btn;
+        }
+
+        .div-info-list .article-in-date{
+            /* bottom: 0; */
+
+            /* flex-shrink: 0;
+            flex-grow: 0; */
+            /* flex: 0 0 14px;grow shrink basis */
+            grid-area: date;
+            justify-content: flex-end;
+
+            display: inline-block;
+
+            font-size: 10px;
+        }
+
+        .article-in-menu-img{
+            display: inline-block;
+            height: 48px;
+            width: 48px;
+
+            /* 동그랗게, 넘어가면 안보이게 */
+            border-radius: 70%;
+            overflow: hidden;
+
+            object-fit: cover;
+        }
+		
+        .article-in-menu{
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            font-weight: bold;
+            font-size: 13px;
+        }
+
+        .article-in-price{
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-size: 11px;
+        }
+
+.img-btn-show-down {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='13.992' height='8' viewBox='0 0 13.992 8'%3E%3Cpath id='Icon_ionic-ios-arrow-down' data-name='Icon ionic-ios-arrow-down' d='M13.186,16.835l5.291-5.295a1,1,0,0,1,1.412,0,1.008,1.008,0,0,1,0,1.416l-5.995,6a1,1,0,0,1-1.379.029L6.479,12.961a1,1,0,0,1,1.412-1.416Z' transform='translate(-6.188 -11.246)'/%3E%3C/svg%3E%0A");
+    background-repeat: no-repeat;
+    background-position: left top;
+
+
+    display: inline-block;
+    width: 13.99px;
+    height: 8px;
+    margin-top: 4px;
+
+    text-indent: 999px;
+    cursor: pointer;
+    overflow: hidden;
+}
+
+.img-btn-close-up {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='13.992' height='8' viewBox='0 0 13.992 8'%3E%3Cpath id='Icon_ionic-ios-arrow-down' data-name='Icon ionic-ios-arrow-down' d='M13.186,13.658l5.291,5.295a1,1,0,0,0,1.412,0,1.008,1.008,0,0,0,0-1.416l-5.995-6a1,1,0,0,0-1.379-.029L6.479,17.532a1,1,0,0,0,1.412,1.416Z' transform='translate(-6.188 -11.246)'/%3E%3C/svg%3E%0A");
+    background-repeat: no-repeat;
+    background-position: left top;
+
+    display: inline-block;
+    width: 13.99px;
+    height: 8px;
+    margin-top: 10px;
+
+    text-indent: 999px;
+    cursor: pointer;
+    overflow: hidden;
+}
+
+
+.main-section .info-header .deco-notice,
+nav .deco-order
+ {
+	line-height: 2;
+}
+

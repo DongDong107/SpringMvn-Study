@@ -1,0 +1,293 @@
+@media screen and (min-width: 768px) {
+
+/*------------------------body main--------------------------*/
+    main {
+        max-width: var(--content-max-width-tablet);
+        min-width: var(--content-min-width-tablet);
+        
+    }
+
+    /*header*/
+    .header-default{
+        text-align: center;
+        margin-bottom: 30px;
+    }
+
+    .search-header form{
+        /* layout */
+        width: 315px;
+        height: 31px;
+        border: solid 1px var(--color-border);
+        box-sizing: content-box;
+        /* item-layout */
+        display: flex;
+    }
+
+    .search-header form input[type=text]{
+        border: none;
+        width: 100%;
+        /* layout */
+        display: inline-block;
+    }
+
+    .search-header form input[type=submit]{
+        border-left: solid 1px var(--color-border);
+        border-radius: 0;
+    }
+
+    /*nav*/
+    .nav-category{
+        padding: 15px 30px;
+        border: solid 1px var(--color-border);
+    }
+
+    .nav-category li{
+        color: var(--color-text-invert);
+        font-size: var(--font-size-normal);
+
+        /* layout */
+        padding: var(--btn-p-v) var(--btn-p-h);
+
+        width: var(--btn-width-large);
+        height: var(--btn-height);
+
+        text-align: center;
+
+        background-color: var(--color-bg-light);
+
+        display: inline-block;
+        box-sizing: border-box;
+    }
+
+    .nav-category ul{
+        padding: 15px 0;
+    }
+
+    .nav-category .nav-selected{
+        border: 0;
+        padding-bottom: 0;
+        background-color: var(--color-main);
+    }
+
+    /*-------------------------------
+    /menu/list
+    ---------------------------------*/
+
+    .new-menu{
+        /* layout */
+        height: 183px;
+    }
+
+    .new-menu .list{
+        height: 100%;
+    }
+
+
+
+
+    /*-------------------------------
+    /admin/menu/detail
+    ---------------------------------*/
+    .menu-rcmd > header {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .menu-rcmd > header > .btn {
+        width: var(--btn-width-large);
+        height: var(--btn-height);
+        text-align: center;
+        border-radius: 0;
+    }
+
+    .menu-detail .btn-remove{
+        background-color: var(--color-strong);
+    }
+
+
+    /*----------------------
+    /user/login
+    ------------------------*/
+    .login {
+        border: solid var(--border-weight) var(--color-border);
+    }
+
+    .login .d-flex{
+        width: 350px;
+        justify-content: space-between;
+    }
+
+    .login form div label{
+        display: inline-block !important;
+
+        font-weight: bold;
+    }
+
+    .login form .d-flex input[type=text],
+    .login form .d-flex input[type=password]{
+        border-radius: 0;
+    }
+
+    .login form div input[type=submit],
+    .login form div a{
+        width: var(--btn-width-large);
+        border-radius: 0;
+    }
+
+    .register {
+        margin: 20px 100px;
+    }
+    /*----------------------
+    /admin/member/list
+    ------------------------*/
+
+
+    .user-list {
+        padding: 0 50px;
+    }
+
+    /*----------------------
+    /user/find-id
+    /user/find-pwd
+    ------------------------*/
+    .find-info{
+        padding: 50px 150px;
+        border: solid var(--border-weight) var(--color-border);
+    }
+
+    .find-info header{
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .find-info form input{
+        border-radius: 0;
+    }
+
+    .find-info form input[type=submit]{
+        width: 100%;
+    }
+
+    
+    /*-----------------------------------
+    /member/index
+    --------------------------------------*/
+
+    .member-index .profile-section{
+        padding: 35px 100px;
+        grid-template: 
+        "img info btn" 30px
+        "img info btn" 70px/
+        100px 1fr 1fr;
+        column-gap: 17px;
+    }
+
+    .member-index .profile-section .btn-div{
+        height: 40px;
+        align-self: flex-end;
+    }
+
+    .member-index .profile-section .btn-div .btn-cancel{
+        border-radius: 0;
+        background-color: var(--color-main-dark);
+        color: var(--color-text-invert);
+        font-weight: bold;
+        padding: var(--btn-text-p-v) var(--btn-text-p-h);
+        display: inline-block;
+        box-sizing: border-box;
+    }    
+
+
+    .member-index .history h1{
+        padding-left: 30px;
+    }
+
+    .member-index .history ul li{
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+
+    .member-index .history ul li .order-data{
+        flex-direction: row;
+    }
+
+    .member-index .history ul li .order-data span{
+        flex-grow: 1;
+    }
+
+    .member-index .menu-rcmd.menu-favorite{
+        padding-left: 70px;
+        padding-right: 70px;
+    }
+
+    .member-index .menu-rcmd.menu-favorite h1{
+        padding-left: 30px;
+    }
+
+    .member-index .menu-rcmd.menu-favorite .list{
+        margin-top: 30px;
+    }
+    
+    .member-index .menu-rcmd.menu-favorite .list div{
+        flex-direction: row;
+    }
+
+    .member-index .menu-rcmd.menu-favorite .list div .info{
+        display: flex;
+        flex-direction: column;
+        align-self: flex-start;
+        margin-top: 0;
+        padding-left: 10px;
+    }
+
+    .member-index .menu-rcmd.menu-favorite .list div .info span{        
+        margin-top: 0;       
+    }
+
+    .member-index .menu-rcmd.menu-favorite .list div .info .name{
+        font-weight: bold;
+    }
+
+
+    .member-index .menu-rcmd.menu-favorite .list div .info .price{
+        margin-top: 12px;
+        display: inline-block;
+    }
+
+    /*-----------------------------------
+    /admin/category/list
+    --------------------------------------*/
+    .category ul li{
+        margin: 10px 0;
+        padding: 0 20px;
+        display: flex;
+        align-items: center;
+    }
+
+    .category ul li.nav-selected{
+        border-radius: 0;	
+    }
+
+    .category ul li a:first-child{
+        padding: 15px 0;
+    }
+
+    .category ul li .btn{
+        width: 37px;
+        height: 37px;
+    }
+    
+    .category div a{
+        width: 150px;
+        height: 40px;
+        font-weight: bold;
+        text-align: center;
+        padding: var(--btn-text-p-v) var(--btn-text-p-h);
+        border-radius: 0;
+    }
+
+    .category div .btn-cancel{
+        margin-left: 5px;
+    }
+}
+

@@ -1,0 +1,84 @@
+
+        /* ====== btn style ==================================================== */
+        .btn-accept {
+            /* layout */
+            padding: 0.5em 2em;
+        }
+        
+        
+        
+        /* ====== outer block ================================================== */
+        .screen {
+            /* layout */
+            width:100vw;
+            height: 100vh;
+            position: fixed;
+            z-index: 100;   
+            background: rgba(0, 0, 0, 0.82);
+            
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .screen .dlg {
+            /* layout */
+            min-width: 270px;
+            padding: 20px 22px 50px 22px;
+            background-color: var(--color-bg-white);
+            border-radius: 30px;
+            box-sizing: border-box;
+            position: relative;
+            top: -100px;
+            
+            /* item layout */
+            display: flex;
+            flex-direction: column;
+
+            /* effect */
+            opacity: 0;
+        }
+
+        .screen .dlg.show {
+            top: 0px;
+            opacity: 1;
+        }
+        
+        .screen .dlg .box-icon-close  {
+           display: flex;
+           justify-content: end;
+        }
+
+        .screen .dlg p {
+            margin-top: 30px;
+        }
+        
+        .screen .dlg .box-btn {
+            margin-top: 30px;
+            
+        }
+
+        .screen .icon-close:hover {
+            cursor: pointer;
+        }
+        
+        .screen .box-btn {
+            width: 100%;
+            display: flex;
+            justify-content: space-evenly;
+        }
+        
+        
+        /* ======= content block =============================================== */
+        
+        .screen p {
+            /* text */
+            font-family: 'Segoe UI';
+            font-size: var(--font-size-title1);
+            font-weight: normal;
+            color: var(--color-bg-dark);
+            text-align: center;
+        
+            /* layout */
+            margin-top: 20px;
+        }

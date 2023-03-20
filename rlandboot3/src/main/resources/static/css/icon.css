@@ -1,0 +1,135 @@
+.icon{
+
+    /* text */
+    overflow: hidden;
+    text-indent: -999px;
+    /* layout */
+    box-sizing: border-box;
+    background-size: 16px 16px;
+
+    /* item-layout */
+	display: inline-flex;
+    width: 24px;
+    height: 24px;
+
+    mask-repeat: no-repeat;
+    -webkit-mask-repeat: no-repeat;
+}
+
+.icon-menu {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+	width: 24px;
+	height: 24px;
+	
+	background-color: #000;
+	mask-image:url(../image/icon/icon-menu.svg);
+    -webkit-mask-image:url(../image/icon/icon-menu.svg);
+  
+	mask-size:24px 24px;    
+	-webkit-mask-size:24px 24px;
+}
+
+.icon-basket {	
+  /* text */
+  color: var(--color-text-emphasis);
+  font-size: 16px;
+  font-weight: bold;
+    
+  /* layout */
+  width: 37px;
+  height: 41px;
+  background: url("../image/icon/icon-basket.svg");
+  line-height: 41px;
+
+  text-indent: 15px;  
+}
+
+.icon-find {
+  --w:30px;
+  --h:30px;
+  width:var(--w);
+  height: var(--h);
+
+  background-color: #000;
+	mask-image:url(../image/icon/icon-find.svg);
+  -webkit-mask-image:url(../image/icon/icon-find.svg);
+  
+	mask-size:var(--w) var(--h);
+	-webkit-mask-size:var(--w) var(--h);
+
+  mask-position: center;
+  -webkit-mask-position: center;
+
+}
+
+.icon-naver {
+  width:50px;
+  height:50px;
+  background-size: 50px 50px;
+  background-image: url("../image/icon/icon-naver.svg");
+}
+
+.icon-kakao {
+  width:50px;
+  height:50px;
+  background-size: 50px 50px;
+  background-image: url("../image/icon/icon-kakao.svg");
+}
+
+.icon-youtube {
+  width:50px;
+  height:50px;
+  background-size: 50px 50px;
+  background-image: url("../image/icon/icon-youtube.svg");
+}
+
+
+
+.icon-white{
+	background-color: #fff;
+}
+
+.icon-text{
+}
+
+/*----------------------20 * 20 버튼----------------------- */
+/* .icon-home {
+  background-image: url("../image/icon/icon-home-sm.svg");
+}
+
+.icon-home {
+	cursor: pointer;
+}
+	
+
+.icon-user {
+  background-image: url("../image/icon/icon-user.svg") ;
+}
+
+.icon-notification {
+  background-image: url("../image/icon/icon-notification.svg");
+}
+
+.icon-close {
+  background-image: url("../image/icon/icon-close-sm.svg");
+}
+
+.icon-close:hover {
+	cursor: pointer;
+}
+
+.icon-menu-contents {
+   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='20' height='20' viewBox='0 0 23 16'%3E%3Cg id='Icon_feather-menu' data-name='Icon feather-menu' transform='translate(-3.5 -8)'%3E%3Cpath id='패스_5' data-name='패스 5' d='M4.5,18h21' transform='translate(0 -2)' fill='none' stroke='%23fff' stroke-linecap='round' stroke-linejoin='round' stroke-width='2'/%3E%3Cpath id='패스_6' data-name='패스 6' d='M4.5,9h21' fill='none' stroke='%23fff' stroke-linecap='round' stroke-linejoin='round' stroke-width='2'/%3E%3Cpath id='패스_7' data-name='패스 7' d='M4.5,27h21' transform='translate(0 -4)' fill='none' stroke='%23fff' stroke-linecap='round' stroke-linejoin='round' stroke-width='2'/%3E%3C/g%3E%3C/svg%3E%0A");
+}
+
+.icon-search {
+  background-image:url("../image/icon/icon-search.svg");
+}
+
+.icon-document{
+  width: 21px;
+  height: 26px;
+  background-image: url("../image/icon/icon-document.svg");
+} */
