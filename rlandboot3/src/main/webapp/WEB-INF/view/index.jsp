@@ -8,6 +8,5 @@
 </head>
 <body>
 	<h1>welcome rland : ${data}</h1>
-	<h2>welcome rland : ${data}</h2>
 </body>
 </html>
