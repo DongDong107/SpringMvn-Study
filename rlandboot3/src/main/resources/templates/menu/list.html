@@ -8,8 +8,10 @@
 		<section>
 			<header class="search-header">
 				<h1 class="text-title1-h1" th:text="${data}">알랜드 메뉴</h1>
-				<form>
-					<input type="text">
+				<!-- action="list" 이게 뭐지? -->
+				<form action="list" method="get">
+					<input type="hidden" name="c" th:value="${param.c}">
+					<input type="text" name="q" th:value="${param.q}">
 					<input type="submit" class="icon icon-find">
 				</form>
 			</header>
@@ -29,11 +31,13 @@
 					<h1 class="text-normal-bold">메뉴분류</h1>
 				</div>
 				<ul>
-					<li class="menu-selected">
-						<a href="/menu/list">전체</a>
+					<li class="" th:class="${param.c}==null ? 'menu-selected'">
+						<a href="list">전체</a>
 					</li>
-					<li>
-						<a href="?c=1">커피음료</a>
+					<!-- 이건뭔소리여 #strings??  -->
+					<li th:each="c : ${categoryList}"
+						th:class="${#strings.equals(param.c, c.id)}? 'menu-selected'">
+						<a th:class="(${param.c}==${c.id})? 'menu-selected'" href="?c=1" th:href="@{list(c=${c.id})}" th:text="${c.name}">커피음료</a>
 					</li>					
 				</ul>
 			</nav>
@@ -49,11 +53,11 @@
 		        <div class="menu-list">
 		            <section class="menu" th:each="menu : ${list}">
 		                <form class="">
-		                    <h1><span th:text="${menu.name}">알랜드 커피</span></h1> 
+		                    <h1><span th:text="${menu.name}">알랜드 커피</span><span style="font-size:11px;" th:text="${menu.categoryName}"> /커피메뉴</span></h1> 
 		                    <div class="menu-img-box">
 		                        <a href="detail" th:href="@{detail(id=${menu.id})}"><img class="menu-img" src="@/image/product/12.png" th:src="@{/image/menu/{img}(img=${menu.img})}"></a>
 		                    </div>    
-		                    <div class="menu-price">4500 원</div>
+		                    <div class="menu-price" th:text="${#numbers.formatInteger({menu.price},3,'COMMA')}+' 원'">4500 원</div>
 		                    <div class="menu-option-list">
 		                        <span class="menu-option">
 		                            <input class="menu-option-input" type="checkbox">

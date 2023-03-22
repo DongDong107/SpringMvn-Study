@@ -90,16 +90,17 @@ public class DefaultMenuService implements MenuService {
 	}
 
 	@Override
-	public List<MenuView> getViewList(int page, int categoryId) {
+	public List<MenuView> getViewList(int page, Integer categoryId) {
 		int size = 10;
 		List<MenuView> list = repository.findViewAll(page, size, null, null, categoryId, null, null);
 		return list;
 	}
 
 	@Override
-	public List<MenuView> getViewList(int page, int categoryId, String query) {
-		int size = 10;
-		List<MenuView> list = repository.findViewAll(page, size, query, null, categoryId, null, null);
+	public List<MenuView> getViewList(int page, Integer categoryId, String query) {
+		int size = 9;
+		int offset = (page-1)*size;
+		List<MenuView> list = repository.findViewAll(offset, size, query, categoryId, null, null, null);
 		return list;
 	}
 

@@ -84,24 +84,13 @@
 					</header>
 
 					<div>
-						<a href="">
-							<img class="image-view-round" src="https://images.unsplash.com/photo-1515442261605-65987783cb6a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80" alt="">
-							<span>아몬드 쿠키</span>
-						</a>
-
-						<a href="">
-							<img class="image-view-round" src="https://images.unsplash.com/photo-1515442261605-65987783cb6a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80" alt="">
-							<span>아몬드 쿠키</span>
-						</a>
-
-						<a href="">
-							<img class="image-view-round" src="https://images.unsplash.com/photo-1515442261605-65987783cb6a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80" alt="">
-							<span>아몬드 쿠키</span>
-						</a>
-
-						<a href="">
-							<img class="image-view-round" src="https://images.unsplash.com/photo-1515442261605-65987783cb6a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80" alt="">
-							<span>아몬드 쿠키</span>
+						<a href="" th:each="rcmdMenu : ${rcmdMenuList}">
+							<img class="image-view-round" 
+							src="https://images.unsplash.com/photo-1515442261605-65987783cb6a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80" 
+							alt=""
+							th:src="@{/image/menu/{img}(img=${rcmdMenu.img})}"
+							>
+							<span th:text="${rcmdMenu.name}" style="color: black">아몬드 쿠키</span>
 						</a>
 					</div>
 				</section>

@@ -54,7 +54,7 @@
     <fullyQualifiedTypeName name="java.lang.reflect.InvocationHandler"/>
     <fullyQualifiedTypeName name="lombok.Data"/>
     <fullyQualifiedTypeName name="lombok.Builder"/>
-    <fullyQualifiedTypeName name="kr.co.rland.web.entity.Category"/>
     <fullyQualifiedTypeName name="lombok.AllArgsConstructor"/>
     <fullyQualifiedTypeName name="kr.co.rland.web.repository.CategoryRepositoryTest"/>
+    <fullyQualifiedTypeName name="kr.co.rland.web.entity.Category"/>
 </qualifiedTypeNameHistroy>
