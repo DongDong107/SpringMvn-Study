@@ -19,4 +19,12 @@ public class DefaultCategoryService implements CategoryService {
 		return repository.findAll();
 	}
 
+	@Override
+	public String getNameById(Integer id) {
+		
+		return repository.findById(id).getName();
+	}
+
+	
+
 }

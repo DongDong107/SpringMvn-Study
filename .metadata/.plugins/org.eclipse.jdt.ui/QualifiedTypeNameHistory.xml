@@ -1,11 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <qualifiedTypeNameHistroy>
-    <fullyQualifiedTypeName name="org.springframework.web.bind.annotation.RestController"/>
-    <fullyQualifiedTypeName name="org.springframework.web.bind.annotation.GetMapping"/>
-    <fullyQualifiedTypeName name="org.springframework.stereotype.Controller"/>
-    <fullyQualifiedTypeName name="org.springframework.ui.Model"/>
-    <fullyQualifiedTypeName name="org.springframework.web.bind.annotation.RequestParam"/>
-    <fullyQualifiedTypeName name="jakarta.servlet.http.HttpServletResponse"/>
     <fullyQualifiedTypeName name="java.net.URLEncoder"/>
     <fullyQualifiedTypeName name="jakarta.servlet.http.Cookie"/>
     <fullyQualifiedTypeName name="org.springframework.http.HttpRequest"/>
@@ -36,13 +30,11 @@
     <fullyQualifiedTypeName name="kr.co.rland.web.di.Config"/>
     <fullyQualifiedTypeName name="org.springframework.context.annotation.AnnotationConfigApplicationContext"/>
     <fullyQualifiedTypeName name="kr.co.rland.web.repository.jdbc.JdbcMenuReposiory"/>
-    <fullyQualifiedTypeName name="org.springframework.stereotype.Service"/>
     <fullyQualifiedTypeName name="kr.co.rland.web.service.MenuService"/>
     <fullyQualifiedTypeName name="kr.co.rland.web.repository.MenuRepository"/>
     <fullyQualifiedTypeName name="org.apache.ibatis.annotations.Mapper"/>
     <fullyQualifiedTypeName name="org.apache.ibatis.annotations.Select"/>
     <fullyQualifiedTypeName name="org.springframework.stereotype.Repository"/>
-    <fullyQualifiedTypeName name="org.springframework.beans.factory.annotation.Autowired"/>
     <fullyQualifiedTypeName name="kr.co.rland.web.entity.Menu"/>
     <fullyQualifiedTypeName name="org.springframework.boot.test.autoconfigure.jdbc.AutoConfigureTestDatabase"/>
     <fullyQualifiedTypeName name="java.util.ArrayList"/>
@@ -52,9 +44,20 @@
     <fullyQualifiedTypeName name="java.lang.reflect.Proxy"/>
     <fullyQualifiedTypeName name="kr.co.rland.web.aop.Calculator"/>
     <fullyQualifiedTypeName name="java.lang.reflect.InvocationHandler"/>
+    <fullyQualifiedTypeName name="kr.co.rland.web.repository.CategoryRepositoryTest"/>
+    <fullyQualifiedTypeName name="kr.co.rland.web.repository.CategoryRepository"/>
+    <fullyQualifiedTypeName name="kr.co.rland.web.entity.Category"/>
+    <fullyQualifiedTypeName name="org.springframework.web.bind.annotation.RequestParam"/>
+    <fullyQualifiedTypeName name="kr.co.rland.web.entity.RcmdMenu"/>
     <fullyQualifiedTypeName name="lombok.Data"/>
     <fullyQualifiedTypeName name="lombok.Builder"/>
+    <fullyQualifiedTypeName name="lombok.Getter"/>
+    <fullyQualifiedTypeName name="lombok.Setter"/>
     <fullyQualifiedTypeName name="lombok.AllArgsConstructor"/>
-    <fullyQualifiedTypeName name="kr.co.rland.web.repository.CategoryRepositoryTest"/>
-    <fullyQualifiedTypeName name="kr.co.rland.web.entity.Category"/>
+    <fullyQualifiedTypeName name="lombok.NoArgsConstructor"/>
+    <fullyQualifiedTypeName name="kr.co.rland.web.service.RcmdMenuService"/>
+    <fullyQualifiedTypeName name="kr.co.rland.web.repository.RcmdMenuRepository"/>
+    <fullyQualifiedTypeName name="org.springframework.beans.factory.annotation.Autowired"/>
+    <fullyQualifiedTypeName name="org.springframework.stereotype.Service"/>
+    <fullyQualifiedTypeName name="kr.co.rland.web.entity.RcmdMenuView"/>
 </qualifiedTypeNameHistroy>

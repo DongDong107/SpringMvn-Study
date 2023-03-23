@@ -9,6 +9,9 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletResponse;
+import jakarta.servlet.http.HttpSession;
 import kr.co.rland.web.entity.Category;
 import kr.co.rland.web.entity.Menu;
 import kr.co.rland.web.entity.MenuView;
@@ -52,14 +55,21 @@ public class MenuController {
 	
 	// http://localhost:8080/menu/detail?id=713	
 	@GetMapping("detail")
-	public String detail(int id, Model model) {
-		
+	public String detail(int id, Model model, HttpServletRequest request) {
+		//model == request 저장소!! 우선 순위는 model 더 높다.
+		request.setAttribute("name", "전재준");
+		model.addAttribute("name", "김선호");
 		Menu menu = service.getById(id);
 		List<RcmdMenuView> rcmdMenuList = rcmdMenuService.getViewListByMenuId(id);
 		
+		String categoryName = categoryService.getNameById(menu.getCategoryId());
+		int cartCount = 10;
+		
 		model.addAttribute("menu", menu);
 		model.addAttribute("rcmdMenuList",rcmdMenuList);
+		model.addAttribute("categoryName",categoryName);
 		
+		//포워딩
 		return "menu/detail";
 	}
 }

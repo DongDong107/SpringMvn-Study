@@ -7,4 +7,8 @@ import kr.co.rland.web.entity.Category;
 public interface CategoryService {
 	
 	List<Category> getList();
+
+	String getNameById(Integer id);
+
+	
 }

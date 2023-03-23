@@ -5,6 +5,7 @@ import java.util.List;
 
 import org.apache.ibatis.annotations.Mapper;
 
+import kr.co.rland.web.entity.Category;
 import kr.co.rland.web.entity.Menu;
 import kr.co.rland.web.entity.MenuView;
 
@@ -39,4 +40,6 @@ public interface MenuRepository {
 	Menu insert(Menu menu);
 	void update(Menu menu);
 	void delete(long id);
+	
+	
 }	

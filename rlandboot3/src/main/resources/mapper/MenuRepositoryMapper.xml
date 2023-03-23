@@ -70,9 +70,9 @@
 		          #{id}
 		    </foreach>
 	  	</where>	
-	</select>
+	</select>	
 	
-	<select id="findById" resultType="Menu">
+	<select id="findById" resultMap="menuResultMap">
 		select *
 		from menu
 		where id=#{id}

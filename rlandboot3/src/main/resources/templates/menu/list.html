@@ -55,6 +55,7 @@
 		                <form class="">
 		                    <h1><span th:text="${menu.name}">알랜드 커피</span><span style="font-size:11px;" th:text="${menu.categoryName}"> /커피메뉴</span></h1> 
 		                    <div class="menu-img-box">
+		                    	<!-- detail 페이지에 id값 넘겨주는 장면 -->
 		                        <a href="detail" th:href="@{detail(id=${menu.id})}"><img class="menu-img" src="@/image/product/12.png" th:src="@{/image/menu/{img}(img=${menu.img})}"></a>
 		                    </div>    
 		                    <div class="menu-price" th:text="${#numbers.formatInteger({menu.price},3,'COMMA')}+' 원'">4500 원</div>

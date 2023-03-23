@@ -11,7 +11,7 @@
 
 			<section class="cart">
 				<h1 class="d-none">장바구니</h1>
-				<span class="text-title3">커피음료</span>
+				<span class="text-title3" th:text="${categoryName}">커피음료</span>
 				<div class="icon icon-basket">1</div>
 			</section>
 
@@ -27,19 +27,28 @@
 					<article>
 						<header>
 							<h1 class="text-title2" th:text="${menu.name}">딸기청</h1>
-							<span class="text-normal" th:text="${#numbers.formatInteger(menu.price,3,'COMMA')} + ' 원'">4,500원</span>
+							<span class="text-normal" th:text="${param.op == null ? 
+								{#numbers.formatInteger(menu.price,3,'COMMA')} + ' 원' : 
+								{#numbers.formatInteger(menu.price+2000,3,'COMMA')} + ' 원'}">
+								4,500원
+							</span>
 						</header>
 						<p class="text-normal" th:utext="${menu.description}">신선한 과일로 만들고 알랜드만의 비법으로 직접 만들어서
 							다른 곳에서는 느낄 수 없는 상큼함과 새콤함을 자랑합니다.
 						</p>
 					</article>
-
+	
 					<div class="tab-div">
-						<a href="" class="btn btn-fill border-bottom-0 btn-size-1">Default 크기</a>
-						<a href="" class="btn btn-line border-bottom-0 border-left-0 btn-size-1">Large 크기</a>
+						<a href="" th:href="@{detail(id=${param.id})}" 
+						class="btn border-bottom-0 btn-size-1" 
+						th:classappend="${param.op}==null ? 'btn-fill' : 'btn-line'">Default 크기</a>
+						<a href="" th:href="@{detail(id=${param.id},op=lg)}" 
+						class="btn border-bottom-0 border-left-0 btn-size-1" 
+						th:classappend="${#strings.equals(param.op, 'lg')} ? 'btn-fill': 'btn-line'">Large 크기</a>
 					</div>	
-
-					<section class="nutrition-info">
+					
+					<section class="nutrition-info" 
+						th:classappend="${param.op}!=null ? 'd-none'">
 						<header>
 							<div class="common-p">
 								<h1 class="text-normal">영양정보</h1>
@@ -66,6 +75,37 @@
 							<li>
 								<span>카페인</span>
 								<span>2 mg</span>
+							</li>
+						</ul>
+					</section>
+					<section class="nutrition-info"
+					th:classappend="${not #strings.equals(param.op, 'lg')}? 'd-none'">
+						<header>
+							<div class="common-p">
+								<h1 class="text-normal">영양정보</h1>
+								<div class="">총량 500ml</div>
+							</div>							
+						</header>
+						<ul class="common-p">
+							<li>
+								<span>포화지방</span>
+								<span>4 g</span>
+							</li>
+							<li>
+								<span>단백질</span>
+								<span>4 g</span>
+							</li>
+							<li>
+								<span>나트륨</span>
+								<span>4 mg</span>
+							</li>
+							<li>
+								<span>당</span>
+								<span>4 g</span>
+							</li>
+							<li>
+								<span>카페인</span>
+								<span>4 mg</span>
 							</li>
 						</ul>
 					</section>

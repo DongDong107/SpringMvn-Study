@@ -12,9 +12,11 @@ public interface CategoryRepository {
 	
 	List<Category> findAll();
 	
-	Category findById(int id);
+	Category findById(Integer id);
 	
 	Category insert(Category category);
 	void update(Category category);
 	void delete(int id);
+
+	
 }	

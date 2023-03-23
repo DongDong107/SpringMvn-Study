@@ -9,10 +9,18 @@
 		select * 
 		from category
 	</select>
+	
+	<select id="findById" resultType="Category">
+		select *
+		from category
+		where id=#{id}
+	</select> 
+	
 	<insert id="insert" parameterType="Category">
 		insert into category(name)
 		value(#{name})
 	</insert>
+	
 	<update id="update" parameterType="Category">
 		update category
 		 <trim prefix="SET" suffixOverrides=",">
@@ -22,6 +30,7 @@
 		 </trim>		
 		where id = #{id}
 	</update>
+	
 	<delete id="delete">
 		delete from category where id=${id}
 	</delete>	
