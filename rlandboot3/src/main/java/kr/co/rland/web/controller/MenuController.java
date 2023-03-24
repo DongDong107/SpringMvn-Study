@@ -50,7 +50,7 @@ public class MenuController {
 		model.addAttribute("list", list);
 		model.addAttribute("categoryList", catogoryList);		
 		
-		return "menu/list"; 
+		return "menu/list2"; 
 	}
 	
 	// http://localhost:8080/menu/detail?id=713	
@@ -70,6 +70,6 @@ public class MenuController {
 		model.addAttribute("categoryName",categoryName);
 		
 		//포워딩
-		return "menu/detail";
+		return "menu/detail2";
 	}
 }
