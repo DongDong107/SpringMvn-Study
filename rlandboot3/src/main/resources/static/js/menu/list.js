@@ -1,4 +1,5 @@
 window.addEventListener("load", function(){
+	const menuList = document.querySelector(".menu-list");
 	let ul = document.querySelector(".menu-category > ul");
 	ul.onclick = function(e){
 		
@@ -11,14 +12,27 @@ window.addEventListener("load", function(){
 				
 		let el = tagName === 'LI' ? e.target : e.target.parentElement;
 		
-		let categoryId = el.data-cid;
+		let categoryId = el.dataset.cid;
 		
 		const request = new XMLHttpRequest();
+		
 		request.onload = function(){
 			let menus = JSON.parse(request.responseText);
 			
-			console.log(menus[0]);	
-		}
+			console.log(menuList.children);
+			// 기존 목록을 다 지우고
+//			menuList.remove();
+
+			for(let i of menuList.children){
+				i.remove();
+			}
+//			
+//			while(menuList.firstElementChild)
+//				menuList.firstElementChild.remove();
+			
+//			menuList.children[0].remove();			
+//			menuList.removeChild(menuList.firstElementChild);
+		};
 		// 브라우저에서 url을 입력하는 것과 같은 요청정보 입력
 		request.open("GET",`http://localhost:8080/menus?c=${categoryId}`,true);
 		request.send();
