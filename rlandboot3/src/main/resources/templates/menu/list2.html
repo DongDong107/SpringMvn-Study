@@ -7,10 +7,11 @@
 
 <main layout:fragment="main">
 <script src="/js/menu/list.js" defer="defer"></script>
-		<section>
+		<section>		
 			<header class="search-header">
 				<h1 class="text-title1-h1" th:text="${data}">알랜드 메뉴</h1>
 				<!-- action="list" 이게 뭐지? -->
+				<input type="checkBox"><label>선택된 카테고리 내 검색</label>
 				<form action="list" method="get">
 					<input type="hidden" name="c" th:value="${param.c}">
 					<input type="text" name="q" th:value="${param.q}">
