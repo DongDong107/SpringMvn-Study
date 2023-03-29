@@ -2,20 +2,16 @@ package kr.co.rland.web.controller.admin;
 
 
 import java.io.UnsupportedEncodingException;
-import java.net.URLDecoder;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpHeaders;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.CookieValue;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestHeader;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import kr.co.rland.web.entity.Menu;
 import kr.co.rland.web.entity.MenuView;
 import kr.co.rland.web.service.MenuService;
 
@@ -31,7 +27,7 @@ public class MenuController {
 	@GetMapping("list")
 	public String list(
 			@RequestParam(name="p", defaultValue = "1") int page,
-			@RequestParam(name="c", required = false) int categoryId,
+			@RequestParam(name="c", required = false) Integer categoryId,
 			@RequestParam(name="q", required = false) String query,
 			Model model			
 			) throws UnsupportedEncodingException {
@@ -44,8 +40,13 @@ public class MenuController {
 	}
 	
 	@GetMapping("detail")
-	public String detail() {
-		return "admin menu detail";
+	public String detail(
+			long id,
+			Model model) {
+		
+			Menu menu = service.getById(id);
+			model.addAttribute("menu",menu);
+		return "admin/menu/detail";
 	}
 	
 	// .admin/menu/

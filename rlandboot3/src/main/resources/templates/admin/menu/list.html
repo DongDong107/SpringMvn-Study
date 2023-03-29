@@ -1,51 +1,14 @@
 <!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link href="../../css/reset.css" type="text/css" rel="stylesheet" >
-    <link href="../../css/style.css" type="text/css" rel="stylesheet" >
-    <link href="../../css/layout.css" type="text/css" rel="stylesheet" >
-    <link href="../../css/header.css" type="text/css" rel="stylesheet" >
-    <link href="../../css/footer.css" type="text/css" rel="stylesheet" >
-	<link href="../../css/component/aside.css" type="text/css" rel="stylesheet" >
-	<link href="../../css/component/cart-section.css" type="text/css" rel="stylesheet" >
-	<link href="../../css/component/menu-category.css" type="text/css" rel="stylesheet" >
-    <link href="../../css/component/menu-section.css" type="text/css" rel="stylesheet" >
-	<link href="../../css/component/search-header.css" type="text/css" rel="stylesheet" >
-
-    <link href="../../css/component.css" type="text/css" rel="stylesheet" >
-    <link href="../../css/buttons.css" type="text/css" rel="stylesheet" >
-    <link href="../../css/icon.css" type="text/css" rel="stylesheet" >
-    <link href="../../css/deco.css" type="text/css" rel="stylesheet" >
-	<link href="../../css/form.css" type="text/css" rel="stylesheet" >
-    
-    <link href="../../css/utils.css" type="text/css" rel="stylesheet" >    
-</head>
-
-<body>
-    
-    <header class="header">
-        <div>
-            <h1 class="header-title"><a href="/index.html"><img class="logo" src="../../image/logo-w.png" alt="알랜드"></a></h1>
-            
-            <ul class="main-menu d-none d-inline-flex-sm">
-                <li><a class="" href="/menu/list.html">카페메뉴</a></li>
-                <li><a class="" href="/notice/list.html">공지사항</a></li>
-                <li><a class="" href="/user/login.html">로그인</a></li>
-            </ul>
-            <div class="d-none-sm"><a class="icon icon-menu icon-white" href="?m=on">메뉴버튼</a></div>
-        </div>
-    </header>
-	
-    <!-- ---------------------------------------------------------------------- -->   
-	<main>
-		<section>
+<html lang="en" 
+	xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	layout:decorate="inc/layout" 
+>
+<main class="main-padding-none" layout:fragment="main">
+<script src="/js/admin/menu/list.js" defer="defer"></script>
+		<section id="main-section">
 			<header class="search-header">
-				<h1 class="text-title1-h1">알랜드 메뉴</h1>
+				<h1 class="text-title1-h1">알랜드 메뉴 <span v-text="test"></span></h1>
 				<form>
 					<input type="text">
 					<input type="submit" class="icon icon-find">
@@ -112,13 +75,14 @@
 		                    </div>
 		                </form>
 		            </section>
-		            <section class="menu border-bottom border-color-1">
+		            <section th:each="menu : ${list}" class="menu border-bottom border-color-1">
 		                <form class="">
-		                    <h1>알랜드 커피</h1> 
+		                    <h1 th:text="${menu.name}">알랜드 커피</h1> 
 		                    <div class="menu-img-box">
-		                        <a href="detail.html"><img class="menu-img" src="/image/product/12.png"></a>
+		                        <a th:href="@{detail(id=${menu.id})}" href="detail?id=617"><img class="menu-img" src="/image/product/12.png"></a>
+<!-- 		                        th:href="@{detail(id=${param.id})}"  -->
 		                    </div>    
-		                    <div class="menu-price">4500 원</div>
+		                    <div class="menu-price" th:text="${menu.price + '원'}">4500 원</div>
 		                    <div class="menu-option-list">
 		                        <span class="menu-option">
 		                            <input class="menu-option-input" type="checkbox">
@@ -134,76 +98,7 @@
 		                        <input class="btn btn-fill btn-round rounded-0-md btn-size-1 ml-1" type="submit" value="삭제">
 		                    </div>
 		                </form>
-		            </section>
-		            <section class="menu border-bottom border-color-1">
-		                <form class="">
-		                    <h1>알랜드 커피</h1> 
-		                    <div class="menu-img-box">
-		                        <img class="menu-img" src="/image/product/12.png">
-		                    </div>    
-		                    <div class="menu-price">4500 원</div>
-		                    <div class="menu-option-list">
-		                        <span class="menu-option">
-		                            <input class="menu-option-input" type="checkbox">
-		                            <label>ICED</label>
-		                        </span>            
-		                        <span class="menu-option ml-2">
-		                            <input class="menu-option-input" type="checkbox">
-		                            <label>Large</label>
-		                        </span>
-		                    </div>
-							<div class="menu-button-list">
-								<input class="btn btn-line btn-round btn-size-1 rounded-0-md" type="submit" value="수정">
-		                        <input class="btn btn-fill btn-round rounded-0-md btn-size-1 ml-1" type="submit" value="삭제">
-		                    </div>
-		                </form>
-		            </section>
-		            <section class="menu border-bottom border-color-1">
-		                <form class="">
-		                    <h1>알랜드 커피</h1> 
-		                    <div class="menu-img-box">
-		                        <img class="menu-img" src="/image/product/12.png">
-		                    </div>    
-		                    <div class="menu-price">4500 원</div>
-		                    <div class="menu-option-list">
-		                        <span class="menu-option">
-		                            <input class="menu-option-input" type="checkbox">
-		                            <label>ICED</label>
-		                        </span>            
-		                        <span class="menu-option ml-2">
-		                            <input class="menu-option-input" type="checkbox">
-		                            <label>Large</label>
-		                        </span>
-		                    </div>
-							<div class="menu-button-list">
-								<input class="btn btn-line btn-round btn-size-1 rounded-0-md" type="submit" value="수정">
-		                        <input class="btn btn-fill btn-round rounded-0-md btn-size-1 ml-1" type="submit" value="삭제">
-		                    </div>
-		                </form>
-		            </section>
-		            <section class="menu border-bottom border-color-1">
-		                <form class="">
-		                    <h1>알랜드 커피</h1> 
-		                    <div class="menu-img-box">
-		                        <img class="menu-img" src="/image/product/12.png">
-		                    </div>
-		                    <div class="menu-price">4500 원</div>
-		                    <div class="menu-option-list">
-		                        <span class="menu-option">
-		                            <input class="menu-option-input" type="checkbox">
-		                            <label>ICED</label>
-		                        </span>            
-		                        <span class="menu-option ml-2">
-		                            <input class="menu-option-input" type="checkbox">
-		                            <label>Large</label>
-		                        </span>
-		                    </div>
-							<div class="menu-button-list">
-								<input class="btn btn-line btn-round btn-size-1 rounded-0-md" type="submit" value="수정">
-		                        <input class="btn btn-fill btn-round rounded-0-md btn-size-1 ml-1" type="submit" value="삭제">
-		                    </div>
-		                </form>
-		            </section>
+		            </section>		            
 		        </div>
 		    </section>
 
@@ -224,23 +119,6 @@
 
 		</section>
 	</main> 
-    <footer class="footer">
-        <h2>알랜드(Rland)</h2>
-        <div>
-            copyright @ rland.co.kr 2022-2022 All Right Reservved. Contact admin@rland.co.kr for more information
-        </div>
-    </footer>
-	<aside class="aside-bar">
-		<h1>aside</h1>
-		<section class="aside-bar-content">
-			<h1>메인메뉴</h1>
-			<ul class="mt-3">
-				<li><a href="">카페메뉴</a></li>
-				<li><a href="">공지사항</a></li>
-				<li><a href="">로그인</a></li>
-			</ul>
-		</section>
-	</aside>
-</body>
+
 
 </html>

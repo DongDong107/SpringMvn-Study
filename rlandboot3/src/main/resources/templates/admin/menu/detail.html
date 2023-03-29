@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en" 
+	xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	layout:decorate="inc/layout" 
+>
+
+	<main class="main-padding-none" layout:fragment="main">
+		<section>
+			<h1 class="d-none">알랜드 메뉴 상세정보</h1>
+
+			<section class="cart">
+				<h1 class="d-none">장바구니</h1>
+				<span class="text-title3" th:text="${categoryName}">커피음료</span>
+				<div class="icon icon-basket">1</div>
+			</section>
+
+			<section>
+				<div class="menu-detail">
+					<header>
+						<h1 class="d-none">수제청</h1>
+						<div class="img-div">
+							<!-- <img alt="" th:src="'/image/menu/'+${menu.img}" src="https://images.unsplash.com/photo-1515442261605-65987783cb6a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80"> -->
+							<img alt="" th:src="@{/image/menu/{img}(img=${menu.img})}" src="https://images.unsplash.com/photo-1515442261605-65987783cb6a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80">
+						</div>
+					</header>
+					<article>
+						<header>
+							<h1 class="text-title2" th:text="${menu.name}">딸기청</h1>
+							<span class="text-normal" th:text="${param.op == null ? 
+								{#numbers.formatInteger(menu.price,3,'COMMA')} + ' 원' : 
+								{#numbers.formatInteger(menu.price+2000,3,'COMMA')} + ' 원'}">
+								4,500원
+							</span>
+						</header>
+						<p class="text-normal" th:utext="${menu.description}">신선한 과일로 만들고 알랜드만의 비법으로 직접 만들어서
+							다른 곳에서는 느낄 수 없는 상큼함과 새콤함을 자랑합니다.
+						</p>
+					</article>
+	
+					<div class="tab-div">
+						<a href="" th:href="@{detail(id=${param.id})}" 
+						class="btn border-bottom-0 btn-size-1" 
+						th:classappend="${param.op}==null ? 'btn-fill' : 'btn-line'">Default 크기</a>
+						<a href="" th:href="@{detail(id=${param.id},op=lg)}" 
+						class="btn border-bottom-0 border-left-0 btn-size-1" 
+						th:classappend="${#strings.equals(param.op, 'lg')} ? 'btn-fill': 'btn-line'">Large 크기</a>
+					</div>	
+					
+					<section class="nutrition-info" 
+						th:classappend="${param.op}!=null ? 'd-none'">
+						<header>
+							<div class="common-p">
+								<h1 class="text-normal">영양정보</h1>
+								<div class="">총량 300ml</div>
+							</div>							
+						</header>
+						<ul class="common-p">
+							<li>
+								<span>포화지방</span>
+								<span>2 g</span>
+							</li>
+							<li>
+								<span>단백질</span>
+								<span>2 g</span>
+							</li>
+							<li>
+								<span>나트륨</span>
+								<span>2 mg</span>
+							</li>
+							<li>
+								<span>당</span>
+								<span>2 g</span>
+							</li>
+							<li>
+								<span>카페인</span>
+								<span>2 mg</span>
+							</li>
+						</ul>
+					</section>
+					<section class="nutrition-info"
+					th:classappend="${not #strings.equals(param.op, 'lg')}? 'd-none'">
+						<header>
+							<div class="common-p">
+								<h1 class="text-normal">영양정보</h1>
+								<div class="">총량 500ml</div>
+							</div>							
+						</header>
+						<ul class="common-p">
+							<li>
+								<span>포화지방</span>
+								<span>4 g</span>
+							</li>
+							<li>
+								<span>단백질</span>
+								<span>4 g</span>
+							</li>
+							<li>
+								<span>나트륨</span>
+								<span>4 mg</span>
+							</li>
+							<li>
+								<span>당</span>
+								<span>4 g</span>
+							</li>
+							<li>
+								<span>카페인</span>
+								<span>4 mg</span>
+							</li>
+						</ul>
+					</section>
+
+				</div>
+
+				<div>
+					<a href="" class="btn btn-cancel btn-cancel-lg btn-size-1 btn-size-2-lg">담기</a>
+					<a href=""  class="btn btn-default btn-default-lg btn-size-1 btn-size-2-lg">주문하기</a>
+				</div>
+
+				<section class="menu-rcmd">
+					<header>
+						<h1 class="d-none">추천 메뉴</h1>
+						<span>함께 시키면 맛나요! ^^</span>
+					</header>
+
+					<div>
+						<a href="" th:each="rcmdMenu : ${rcmdMenuList}">
+							<img class="image-view-round" 
+							src="https://images.unsplash.com/photo-1515442261605-65987783cb6a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80" 
+							alt=""
+							th:src="@{/image/menu/{img}(img=${rcmdMenu.img})}"
+							>
+							<span th:text="${rcmdMenu.name}" style="color: black">아몬드 쿠키</span>
+						</a>
+					</div>
+				</section>
+			</section>
+
+			<section class="new-menu detail-section-p">
+				<h1 class="d-none">신메뉴 목록</h1>
+				<!-- <ul>
+                    <li>
+                    </li>
+                </ul>  -->
+				<div class="list">
+					<span>신규로 출시된 메뉴가 없습니다.</span>
+				</div>
+			</section>
+
+		</section>
+
+	</main>
+	
+</html> 
