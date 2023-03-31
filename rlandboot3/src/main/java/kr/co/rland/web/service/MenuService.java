@@ -10,7 +10,9 @@ public interface MenuService {
 	Menu getById(long id);
 	
 	void pointUp();
-
+	
+	void add(Menu menu);
+	
 	List<Menu> getList();
 	List<Menu> getList(int page);
 	List<Menu> getList(int page, String query);

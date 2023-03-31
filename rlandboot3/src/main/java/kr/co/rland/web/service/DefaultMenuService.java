@@ -104,6 +104,13 @@ public class DefaultMenuService implements MenuService {
 	}
 
 
+	@Override
+	public void add(Menu menu) {
+		repository.insert(menu);
+		
+	}
+
+
 	
 
 }

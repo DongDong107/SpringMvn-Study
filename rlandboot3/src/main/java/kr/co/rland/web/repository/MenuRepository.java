@@ -37,7 +37,7 @@ public interface MenuRepository {
 			Integer categoryId,
 			Integer price		
 			);
-	Menu insert(Menu menu);
+	void insert(Menu menu);
 	void update(Menu menu);
 	void delete(long id);
 	
