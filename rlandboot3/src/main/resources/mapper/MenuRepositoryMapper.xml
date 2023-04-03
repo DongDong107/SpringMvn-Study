@@ -33,7 +33,7 @@
 			</if> 
 		</trim>
 		<if test="orderField != null">
-			order by ${orderField} ${orderDisr}
+			order by ${orderField} ${orderDir}
 		</if>
 		<if test="size != null">
 			limit #{size} offset #{offset}

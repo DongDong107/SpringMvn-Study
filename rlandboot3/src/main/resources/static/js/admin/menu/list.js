@@ -35,7 +35,10 @@
 			
 			fetch("http://localhost:8080/menus?", requestOptions)
 			  .then(response => response.text())
-			  .then(result => console.log(result))
+			  .then(result => {
+					if(result==="ok");
+					this.load();
+				})
 			  .catch(error => console.log('error', error));
 		},
 		async categoryClickHandler(e){

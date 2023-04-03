@@ -75,7 +75,7 @@ public class MenuController {
 	   service.add(menu);
 	   System.out.println(menu.getName());
 	   
-      return "menu insert"; 
+      return "ok"; 
    }
    
    

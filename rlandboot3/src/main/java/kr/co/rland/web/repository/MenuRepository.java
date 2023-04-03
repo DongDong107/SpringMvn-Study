@@ -19,7 +19,7 @@ public interface MenuRepository {
 						Integer categoryId,
 						Integer price,					
 						String orderField,
-						String orderDisr);	
+						String orderDir);	
 //	List<Menu> findAll(int page);
 //	List<Menu> findAll(Integer offset, 
 //						Integer size);	
@@ -29,7 +29,7 @@ public interface MenuRepository {
 						Integer categoryId,
 						Integer price,					
 						String orderField,
-						String orderDisr);
+						String orderDir);
 	List<Menu> findAllByIds(List<Long> ids);
 	Menu findById(long id);
 	int count(

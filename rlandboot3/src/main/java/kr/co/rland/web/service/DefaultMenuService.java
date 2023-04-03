@@ -99,7 +99,9 @@ public class DefaultMenuService implements MenuService {
 	public List<MenuView> getViewList(int page, Integer categoryId, String query) {
 		int size = 9;
 		int offset = (page-1)*size;
-		List<MenuView> list = repository.findViewAll(offset, size, query, categoryId, null, null, null);
+		String orderField = "reg_date";
+		String order = "desc";
+		List<MenuView> list = repository.findViewAll(offset, size, query, categoryId, null, orderField, order);
 		return list;
 	}
 
