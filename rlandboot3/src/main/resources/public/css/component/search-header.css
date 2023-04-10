@@ -1,9 +1,0 @@
-/*header*/
-.search-header {
-	display: flex;
-	justify-content: space-between;
-}
-
-.search-header input[type=submit]{
-	border: none;
-}

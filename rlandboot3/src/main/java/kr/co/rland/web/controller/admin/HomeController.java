@@ -16,6 +16,7 @@ import org.springframework.web.bind.annotation.RequestHeader;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import jakarta.servlet.http.HttpServletRequest;
 import kr.co.rland.web.entity.MenuView;
 import kr.co.rland.web.service.MenuService;
 
@@ -25,7 +26,10 @@ import kr.co.rland.web.service.MenuService;
 public class HomeController {
 	
 	@GetMapping("index")
-	public String index() {
+	public String index(HttpServletRequest request) {
+		
+//		request.getSession().setAttribute("test", "hehe");
+		
 		return "admin/index";
 	}
 	

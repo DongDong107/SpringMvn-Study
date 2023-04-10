@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import jakarta.servlet.http.HttpSession;
 import kr.co.rland.web.entity.Menu;
 import kr.co.rland.web.entity.MenuView;
 import kr.co.rland.web.service.MenuService;
@@ -29,9 +30,19 @@ public class MenuController {
 			@RequestParam(name="p", defaultValue = "1") int page,
 			@RequestParam(name="c", required = false) Integer categoryId,
 			@RequestParam(name="q", required = false) String query,
-			Model model			
+			Model model,
+			HttpSession session
 			) throws UnsupportedEncodingException {
 			
+		// 로그인은 했나? -> 그럼 어드민은 맞나?
+		// 아니요 -> 로그인하고 와
+		
+//		if(session.getAttribute("isAuth") == null)
+//			return"redirect:/user/login";
+		//if(너 로그이는 했니?)
+		// 네-> if(어드민인가?)
+		// 아니요 -> 권한이 없다.
+		
 		
 		List<MenuView> list = service.getViewList(page, categoryId, query);
 		model.addAttribute("list",list);
