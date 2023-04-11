@@ -42,7 +42,9 @@ public class MenuController {
 		//if(너 로그이는 했니?)
 		// 네-> if(어드민인가?)
 		// 아니요 -> 권한이 없다.
-		
+		if(session.getAttribute("username")==null) {
+			return "redirect:/user/login?returnURL=/admin/menu/list";
+		}
 		
 		List<MenuView> list = service.getViewList(page, categoryId, query);
 		model.addAttribute("list",list);

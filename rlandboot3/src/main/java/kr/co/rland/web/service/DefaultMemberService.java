@@ -22,8 +22,12 @@ public class DefaultMemberService implements MemberService {
 	public boolean isValidMember(String uid, String pwd) {
 		
 		Member member = repository.findByUserName(uid);
+		if(member == null)
+			return false;
+		else if(!member.getPwd().equals(pwd))
+			return false;
 		
-		return false;
+		return true;
 	}
 
 }

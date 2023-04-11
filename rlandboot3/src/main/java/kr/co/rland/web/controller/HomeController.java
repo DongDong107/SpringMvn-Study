@@ -64,10 +64,10 @@ public class HomeController {
 
 		System.out.println(data);
 
-		Cookie cookie = new Cookie("my", data);
-		response.addCookie(cookie);
-
-		model.addAttribute("data", data);
+//		Cookie cookie = new Cookie("my", data);
+//		response.addCookie(cookie);
+//
+//		model.addAttribute("data", data);
 
 		return "index";
 	}

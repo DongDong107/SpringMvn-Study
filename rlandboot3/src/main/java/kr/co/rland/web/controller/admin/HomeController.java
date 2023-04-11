@@ -1,24 +1,11 @@
 package kr.co.rland.web.controller.admin;
 
 
-import java.io.UnsupportedEncodingException;
-import java.net.URLDecoder;
-import java.util.List;
-
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpHeaders;
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.CookieValue;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestHeader;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
 
-import jakarta.servlet.http.HttpServletRequest;
-import kr.co.rland.web.entity.MenuView;
-import kr.co.rland.web.service.MenuService;
+import jakarta.servlet.http.HttpSession;
 
 // 이름 설정을 admin 안붙여서 안해놓으면 일반위의 MenuController랑 이름이 겹치게 돼서 오류남.
 @Controller("adminHomeController")
@@ -26,9 +13,13 @@ import kr.co.rland.web.service.MenuService;
 public class HomeController {
 	
 	@GetMapping("index")
-	public String index(HttpServletRequest request) {
+	public String index(HttpSession session) {
 		
 //		request.getSession().setAttribute("test", "hehe");
+		
+		if(session.getAttribute("username")==null) {
+			return "redirect:/user/login?returnURL=/admin/index";
+		}
 		
 		return "admin/index";
 	}

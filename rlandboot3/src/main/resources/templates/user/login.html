@@ -1,50 +1,24 @@
 <!DOCTYPE html>
-<html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Document</title>
-        <link href="/css/reset.css" type="text/css" rel="stylesheet" >
-        <link href="/css/style.css" type="text/css" rel="stylesheet" >
-        <link href="/css/layout.css" type="text/css" rel="stylesheet" >
-        <link href="/css/header.css" type="text/css" rel="stylesheet" >
-        <link href="/css/footer.css" type="text/css" rel="stylesheet" >
-        
-        <link href="/css/buttons.css" type="text/css" rel="stylesheet" >
-        <link href="/css/icon.css" type="text/css" rel="stylesheet" >
-        <link href="/css/deco.css" type="text/css" rel="stylesheet" >
-        <link href="/css/index.css" type="text/css" rel="stylesheet">
-        <link href="/css/utils.css" type="text/css" rel="stylesheet" >
-        <style>
-        	.btn{
-        		color:black;
-        	}
-        </style>    
-    </head>
-    
-    <body>
-        <header class="header">
-            <div>
-                <h1 class="header-title"><a href="/index.html"><img class="logo" src="../image/logo-w.png" alt="알랜드"></a></h1>
-                
-                <ul class="main-menu d-none d-inline-flex-sm">
-                    <li><a class="" href="/menu/list.html">카페메뉴</a></li>
-                    <li><a class="" href="/notice/list.html">공지사항</a></li>
-                    <li><a class="" href="/user/login.html">로그인</a></li>
-                </ul>
-                <div class="d-none-sm"><a class="icon icon-menu icon-white" href="?m=on">메뉴버튼</a></div>
-            </div>
-        </header>
+<html 
+	xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	layout:decorate="inc/layout"
+>
 
-    <main>
+
+ <main layout:fragment="main">
         <section>
             <header class="header-default">
                 <h1 class="text-title1-h1">로그인</h1>
             </header>
             <section class="login">
                 <h1 class="d-none">일반 로그인</h1>
-                <form>
+                <div class="d-none" 
+                th:class="${param.error} ? '' : 'd-none'"
+                style="color:red; font-weight: bold; text-align: center; margin-bottom: 20px;">
+                	아이디 또는 비밀번호가 일치하지 않습니다.
+                </div>
+                <form method="post">
                     <div class="d-flex align-items-center">
                         <label class="d-none">아이디</label><input name="uid" class="btn btn-cancel" type="text" placeholder="로그인 아이디를 입력하세요">
                     </div>
@@ -82,12 +56,6 @@
             </section>
         </section>
     </main>
+    
 
-    <footer class="footer">
-        <h2>알랜드(Rland)</h2>
-        <div>
-            copyright @ rland.co.kr 2022-2022 All Right Reservved. Contact admin@rland.co.kr for more information
-        </div>
-    </footer>
-</body>
 </html>
