@@ -1,5 +1,8 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
+<html
+	xmlns:th="http://www.thymeleaf.org"
+	xmlns:sec="http://www.thymeleaf.org/extras/spring-security"
+>
     <header class="header">
         <div>
             <h1 class="header-title"><a href="/index.html"><img class="logo" src="/image/logo-w.png" alt="알랜드"></a></h1>
@@ -7,8 +10,11 @@
             <ul class="main-menu d-none d-inline-flex-sm">
 				<li><a class="" href="/menu/list">카페메뉴</a></li>
                 <li><a class="" href="/notice/list">공지사항</a></li>
-                <li th:if="session.username == null"><a class="" href="/user/login">로그인</a></li>
-                <li th:if="session.username != null"><a class="" href="/user/login">로그아웃</a></li>
+                
+                <li sec:authorize="isAnonymous()"><a class="" href="/user/login">로그인</a></li>
+<!--                 <li th:if="isAnonymous()"><a class="" href="/user/login">로그인</a></li> -->
+                <li sec:authorize="isAuthenticated()"><a class="" href="/user/login">로그아웃</a></li>
+<!--                 <li th:if="isAuthenticated()"><a class="" href="/user/login">로그아웃</a></li> -->
             </ul>
 			<div class="d-none-sm"><a class="icon icon-menu icon-white" href="?m=on">메뉴버튼</a></div>
         </div>

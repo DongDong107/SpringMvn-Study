@@ -57,7 +57,7 @@ public class HomeController {
 		return "ok";
 	}
 
-	@RequestMapping("index")
+	@RequestMapping("/index")
 	public String index(Model model, HttpServletResponse response) throws UnsupportedEncodingException {
 
 		String data = URLEncoder.encode("cookie래요~", "utf-8");

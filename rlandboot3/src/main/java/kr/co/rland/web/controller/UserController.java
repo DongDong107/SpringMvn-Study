@@ -18,31 +18,40 @@ public class UserController {
 	
 	@GetMapping("login")
 	public String login() {
+		
 		return "user/login";
 	}
 	
-	@PostMapping("login")
-	public String login(String uid, 
-						String pwd, 
-						String returnURL, 
-						HttpSession session) {
-
-//		Member member = memberService.getByUserName(uid);
-		boolean isValid = memberService.isValidMember(uid,pwd);
-		System.out.println(isValid);
-		
-		if(isValid) {
-			// 현재 로그인한 유저의 id 까지 얻을 수 있는 일석이조.
-			session.setAttribute("username", uid);
-			
-			if(returnURL != null)
-				return "redirect:"+returnURL;
-			
-			return "redirect:/index";
-		}
-		
-		return "redirect:login?error";
-	}
+//	@RequestMapping("logout")
+//	public String logout(HttpSession session) {
+//		//캐비넷 파기
+//		session.invalidate();
+//		
+//		return "redirect:/index";
+//	}
+	
+//	@PostMapping("login")
+//	public String login(String uid, 
+//						String pwd, 
+//						String returnURL, 
+//						HttpSession session) {
+//
+////		Member member = memberService.getByUserName(uid);
+//		boolean isValid = memberService.isValidMember(uid,pwd);
+//		System.out.println(isValid);
+//		
+//		if(isValid) {
+//			// 현재 로그인한 유저의 id 까지 얻을 수 있는 일석이조.
+//			session.setAttribute("username", uid);
+//			
+//			if(returnURL != null)
+//				return "redirect:"+returnURL;
+//			
+//			return "redirect:/index";
+//		}
+//		
+//		return "redirect:login?error";
+//	}
 	
 	
 

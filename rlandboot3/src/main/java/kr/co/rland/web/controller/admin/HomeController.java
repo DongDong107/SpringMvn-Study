@@ -17,9 +17,9 @@ public class HomeController {
 		
 //		request.getSession().setAttribute("test", "hehe");
 		
-		if(session.getAttribute("username")==null) {
-			return "redirect:/user/login?returnURL=/admin/index";
-		}
+//		if(session.getAttribute("username")==null) {
+//			return "redirect:/user/login?returnURL=/admin/index";
+//		}
 		
 		return "admin/index";
 	}
