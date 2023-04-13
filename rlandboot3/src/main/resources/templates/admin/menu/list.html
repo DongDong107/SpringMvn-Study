@@ -2,13 +2,14 @@
 <html lang="en" 
 	xmlns:th="http://www.thymeleaf.org"
 	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
-	layout:decorate="inc/layout" 
+	layout:decorate="inc/layout"
+	xmlns:sec="http://www.thymeleaf.org/extras/spring-security"
 >
 <main class="main-padding-none" layout:fragment="main">
 <script src="/js/admin/menu/list.js" defer="defer"></script>
 		<section id="main-section">
 			<header class="search-header">
-				<h1 class="text-title1-h1">알랜드 메뉴 <span v-text="test"></span></h1>
+				<h1 class="text-title1-h1">알랜드 메뉴 <span sec:authentication="principal.email"></span></h1>
 				<form>
 					<input type="text">
 					<input type="submit" class="icon icon-find">

@@ -2,16 +2,21 @@ package kr.co.rland.web.controller.admin;
 
 
 import java.io.UnsupportedEncodingException;
+import java.security.Principal;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import jakarta.servlet.http.HttpSession;
+import kr.co.rland.web.config.RlandUserDetails;
 import kr.co.rland.web.entity.Menu;
 import kr.co.rland.web.entity.MenuView;
 import kr.co.rland.web.service.MenuService;
@@ -74,10 +79,35 @@ public class MenuController {
 //	
 //	// 폼입력해서 제출이요
 ////	@RequestMapping("reg")
-//	@PostMapping("reg")
-//	public String reg(String title) {
-//		// 등록하고
-//		System.out.println("메뉴 등록 완료");
-//		return "redirect:list";
-//	}
+	@PostMapping("reg")
+	public String reg(
+			String title, 
+			Authentication authentication, 
+			Principal principal) {
+		
+		// 커스텀 사용자 정보 얻기
+		RlandUserDetails user1 = (RlandUserDetails) authentication.getPrincipal();
+		System.out.println(user1.getUsername());
+		
+		//방법4
+		System.out.println(principal.getName());
+		
+		//방벙3
+		UserDetails user = (UserDetails) authentication.getPrincipal();
+		System.out.println(user.getUsername());
+		
+		// 방법2
+		String userName = authentication.getName();
+//		authentication.getPrincipal();
+		System.out.println(userName);
+		
+		//	방법 1
+//		Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+//		String currentPrincipalName = authentication.getName();
+//		System.out.println(currentPrincipalName);
+		
+		// 등록하고
+		System.out.println("메뉴 등록 완료");
+		return "redirect:list";
+	}
 }

@@ -1,5 +1,8 @@
 package kr.co.rland.web.config;
 
+import javax.sql.DataSource;
+
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
@@ -9,10 +12,14 @@ import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.provisioning.InMemoryUserDetailsManager;
+import org.springframework.security.provisioning.JdbcUserDetailsManager;
 import org.springframework.security.web.SecurityFilterChain;
 
 @Configuration
 public class RlandSecurityConfig {
+	
+	@Autowired
+	private DataSource dataSource;
 	
 	// 콩자루에 담아조 객체 만들어서 리턴할거야 설정하게되는 녀석
 	
@@ -53,9 +60,7 @@ public class RlandSecurityConfig {
 	
 	// 사용자 데이터 서비스
 	// 1. 인메모리 서비스
-	// 2. JDBC 서비스
-	// 3. LDAP 서비스 (윈도우 서비스 액티브 디렉토리)
-	@Bean
+	//@Bean
 	public UserDetailsService userDetailsService() {
 		
 		UserDetails newlec = User.builder()
@@ -78,4 +83,28 @@ public class RlandSecurityConfig {
 		
 		return new InMemoryUserDetailsManager(newlec, dragon);
 	}
+	
+	// 2. JDBC 서비스
+		//@Bean
+		public UserDetailsService jdbcUserDetailsService() {
+			
+			JdbcUserDetailsManager manager = new JdbcUserDetailsManager(dataSource);
+			manager.setUsersByUsernameQuery("select username, pwd password, 1 enabled from member where username=?"); //username, password, enabled
+			manager.setAuthoritiesByUsernameQuery("select username, 'ROLE_ADMIN' authority from member where username=?");
+			
+			return manager;
+		}
+
+	// 3. 커스텀 유저 서비스
+		//@Bean
+		public UserDetailsService rlandUserDetailsService() {
+			
+			
+			return new RlandUserDetailsService();
+		}
+
+		// 3. LDAP 서비스 (윈도우 서비스 액티브 디렉토리)
 }
+
+	
+	
